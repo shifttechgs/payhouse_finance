@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-
         <!-- Primary SEO Meta -->
-        <title>Payhouse Finance - Innovative Fintech & Financial Solutions</title>
+        <title>Payhouse Finance - Financial Solutions</title>
         <meta name="title" content="Payhouse Finance - Innovative Fintech & Financial Solutions">
         <meta name="description" content="Payhouse Finance provides cutting-edge fintech solutions, including digital payments, credit systems, analytics, and financial automation for businesses and individuals.">
         <meta name="keywords" content="Fintech, Digital Payments, Financial Services, Credit Systems, Finance Automation, Payhouse Finance, Financial Technology, Secure Transactions">
@@ -37,11 +36,6 @@
         <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
 
 
-
-
-
-
-
     <!-- Essential CSS Files -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/flaticon_finto.css">
@@ -53,6 +47,14 @@
     <!-- Title & Favicon -->
     <title>Payhouse Finance - Fintech & Finance </title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+
+    <!-- Toastr CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
+
+
+
 </head>
 <body>
 @include("partials.header")
@@ -65,6 +67,35 @@
 <script src="assets/js/smooth-scroll.js"></script>
 <script src="assets/js/scrollCue.min.js"></script>
 <script src="assets/js/script.js"></script>
+
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<!-- Toastr Flash Message -->
+<script>
+    @if(session('success'))
+    toastr.success("{{ session('success') }}");
+    @elseif(session('error'))
+    toastr.error("{{ session('error') }}");
+    @elseif(session('warning'))
+    toastr.warning("{{ session('warning') }}");
+    @elseif(session('info'))
+    toastr.info("{{ session('info') }}");
+    @endif
+</script>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            if (window.location.pathname === "/") {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+</script>
 </body>
 
 </html>
