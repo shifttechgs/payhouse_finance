@@ -2,13 +2,26 @@
 <div class="footer-area bg-color-0c3a30 pt-120">
     <div class="container">
         <div class="row" data-cues="slideInUp" data-duration="800">
-            <div class="col-xl-4 col-lg-9 col-md-6">
+            <div class="col-xl-3 col-lg-9 col-md-6">
                 <div class="footer-weight">
-                    <h2 class="text-white">Subscribe Newsletter</h2>
-                    <form class="footer-form position-relative">
-                        <input type="email" class="form-control" placeholder="Enter Your Email">
-                        <button type="submit" class="default-btn">Subscribe <i class="ri-arrow-right-up-line"></i></button>
-                    </form>
+                    <div class="copy-image" data-cues="zoomIn" data-duration="700">
+
+                            <a class="d-block navbar-brand logo-brand p-0" href="{{ url('/') }}">
+                                <img
+                                    src="{{ asset('assets/images/payhouse.png') }}"
+                                    alt="Payhouse Finance - Loans in Zimbabwe"
+                                    class="payhouse-logo"
+                                    loading="eager"
+                                >
+                            </a>
+
+                    </div>
+
+{{--                    <div class="section-heading mt-5">--}}
+
+{{--                        <p style="color: white;" class="mb-5">Payhouse Finance is a registered microfinance institution committed to making finance accessible to all. With a presence across Harare, Marondera, and Chinhoyi, we provide a broad range of financial solutions to individuals and businesses.</p>--}}
+
+{{--                    </div>--}}
                     <ul class="social">
                         <li><span>Follow Us:</span></li>
                         <li>
@@ -34,72 +47,84 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-4 col-md-6">
-                <div class="footer-weight part-two ps-5">
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="footer-weight part-three ps-5">
                     <h3 class="text-white">Quick Links</h3>
 
                     <ul class="service-link">
                         <li>
-                            <a href="terms-conditions.html">Terms & Conditions</a>
+                            <a href="{{ url('/') }}#services">Services</a>
                         </li>
                         <li>
-                            <a href="blog.html">Blog & News</a>
+                            <a href="{{ url('/') }}#how_it_works">How it works</a>
                         </li>
                         <li>
-                            <a href="services.html">Mobile App</a>
+                            <a href="{{ url('/') }}#team">Our Team</a>
                         </li>
-                        <li>
-                            <a href="services.html">Why Choose Us</a>
-                        </li>
-                        <li>
-                            <a href="pricing.html">Pricing Plan</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="footer-weight part-three ps-5">
-                    <h3 class="text-white">Our Services</h3>
 
-                    <ul class="service-link">
                         <li>
-                            <a href="services.html">Mobile Banking</a>
+                            <a href="{{ url('/') }}#faq">FAQ</a>
                         </li>
                         <li>
-                            <a href="services.html">Advanced Security</a>
+                            <a href="{{ url('/') }}">Contact Us</a>
                         </li>
-                        <li>
-                            <a href="services.html">Digital Wallet</a>
-                        </li>
-                        <li>
-                            <a href="services.html">Budgeting Tools</a>
-                        </li>
-                        <li>
-                            <a href="services.html">Making Transactions</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6">
                 <div class="footer-weight ps-5">
-                    <h3 class="text-white">Get In Touch</h3>
+                    <h3 class="text-white">Get in Touch</h3>
+
+                    <ul class="get-touch">
+
+                        <li>
+                            <img class="phone" src="assets/images/svg/mail.svg" alt="image">
+                            <span class="text-white"><b>Email:</b></span>
+                            <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#9af2fff6f6f5dafcf3f4eef5b4f9f5f7"><span class="__cf_email__" data-cfemail="5139343d3d3e1137383f253e7f323e3c">info@payhousefinance.com</span></a>
+                        </li>
+                        <li>
+                            <img class="phone" src="assets/images/svg/phone.svg" alt="image">
+                            <span class="text-white"><b>Phone: Harare</b></span>
+                            <a href="tel:0018085550148">+263 (777) 229 401</a>
+                        </li>
+                        <li>
+                            <img class="phone" src="assets/images/svg/phone.svg" alt="image">
+                            <span class="text-white"><b>Phone: Marondera</b></span>
+                            <a href="tel:0018085550148">+263 (773) 009 129</a>
+                        </li>
+                        <li>
+                            <img class="phone" src="assets/images/svg/phone.svg" alt="image">
+                            <span class="text-white"><b>Phone: Chinhoyi</b></span>
+                            <a href="tel:0018085550148">+263 (779) 130 258</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="footer-weight ps-5">
+                    <h3 class="text-white">Branches</h3>
 
                     <ul class="get-touch">
                         <li>
                             <img src="assets/images/svg/map.svg" alt="image">
-                            <span class="text-white"><b>Location:</b></span>
-                            <a href="https://www.google.com/maps/search/18+Tanglewood+Lane+Gulfport/@30.4216847,-89.1511032,12z/data=!3m1!4b1?entry=ttu" target="_blank">18 Tanglewood Lane Gulfport</a>
+                            <span class="text-white"><b>Harare:</b></span>
+                            <a href="https://www.google.com/maps/search/18+Tanglewood+Lane+Gulfport/@30.4216847,-89.1511032,12z/data=!3m1!4b1?entry=ttu" target="_blank">Suite EF05-09 Lonrho Building, 90 Nelson Mandela Avenue</a>
+                        </li>
+
+                        <li>
+                            <img src="assets/images/svg/map.svg" alt="image">
+                            <span class="text-white"><b>Marondera:</b></span>
+                            <a href="https://www.google.com/maps/search/18+Tanglewood+Lane+Gulfport/@30.4216847,-89.1511032,12z/data=!3m1!4b1?entry=ttu" target="_blank">250 Posselt Avenue, The Green</a>
                         </li>
                         <li>
-                            <img class="phone" src="assets/images/svg/mail.svg" alt="image">
-                            <span class="text-white"><b>Email:</b></span>
-                            <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#9af2fff6f6f5dafcf3f4eef5b4f9f5f7"><span class="__cf_email__" data-cfemail="5139343d3d3e1137383f253e7f323e3c">[email&#160;protected]</span></a>
+                            <img src="assets/images/svg/map.svg" alt="image">
+                            <span class="text-white"><b>Chinhoyi:</b></span>
+                            <a href="https://www.google.com/maps/search/18+Tanglewood+Lane+Gulfport/@30.4216847,-89.1511032,12z/data=!3m1!4b1?entry=ttu" target="_blank">Office 26, White House Shopping Mall, 67 Arthur Maramba Street</a>
                         </li>
-                        <li>
-                            <img class="phone" src="assets/images/svg/phone.svg" alt="image">
-                            <span class="text-white"><b>Phone:</b></span>
-                            <a href="tel:0018085550148">+001 (808) 5550148</a>
-                        </li>
+
+
                     </ul>
                 </div>
             </div>
@@ -114,22 +139,22 @@
         <div class="copyright-border">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-4 col-md-6">
-                    <p>© <script>document.write(new Date().getFullYear())</script> <span>PayHouse Finance</span> Developed By <a href="https://shifttechgs.com/" target="_blank">ShiftTech</a></p>
+                    <p>© <script>document.write(new Date().getFullYear())</script> <span>Payhouse Finance</span> Designed By <a href="https://shifttechgs.com/" target="_blank">ShiftTech</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="copy-image" data-cues="zoomIn" data-duration="700">
-                        <a href="index.html" class="d-block">
-                            <img src="assets/images/white-logo.png" alt="image">
-                        </a>
+{{--                        <a href="index.html" class="d-block">--}}
+{{--                            <img src="assets/images/white-logo.png" alt="image">--}}
+{{--                        </a>--}}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <ul>
                         <li>
-                            <a href="privacy-policy.html">Privacy Policy</a>
+                            <a href="{{ url('/') }}">Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="terms-conditions.html">Terms & Conditions</a>
+                            <a href="{{ url('/') }}">Terms & Conditions</a>
                         </li>
                     </ul>
                 </div>

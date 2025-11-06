@@ -1,0 +1,133 @@
+/* ===================================
+   Payhouse Finance Logo Styles
+   =================================== */
+
+/* Desktop Logo Styles */
+.payhouse-logo {
+    height: 180px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Logo hover effect */
+.navbar-brand:hover .payhouse-logo {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* Sticky navbar logo (smaller when scrolling) */
+.navbar.sticky .payhouse-logo {
+    height: 180px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: height 0.3s ease-in-out;
+}
+
+/* Mobile Logo Styles */
+.payhouse-logo-mobile {
+    height: 65px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+/* Tablet Responsive (iPad, tablets) */
+@media only screen and (max-width: 991px) {
+    .payhouse-logo {
+        height: 90px;
+    }
+
+    .navbar.sticky .payhouse-logo {
+        height: 70px;
+    }
+}
+
+/* Mobile Responsive (large phones) */
+@media only screen and (max-width: 767px) {
+    .payhouse-logo {
+        height: 75px;
+    }
+
+    .navbar.sticky .payhouse-logo {
+        height: 60px;
+    }
+
+    .payhouse-logo-mobile {
+        height: 60px;
+    }
+}
+
+/* Small Mobile (iPhone SE, small phones) */
+@media only screen and (max-width: 575px) {
+    .payhouse-logo {
+        height: 65px;
+    }
+
+    .navbar.sticky .payhouse-logo {
+        height: 50px;
+    }
+
+    .payhouse-logo-mobile {
+        height: 55px;
+    }
+}
+
+/* Extra Small Mobile (very small screens) */
+@media only screen and (max-width: 375px) {
+    .payhouse-logo {
+        height: 55px;
+    }
+
+    .navbar.sticky .payhouse-logo {
+        height: 45px;
+    }
+
+    .payhouse-logo-mobile {
+        height: 50px;
+    }
+}
+
+/* High DPI screens (Retina displays) */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi) {
+    .payhouse-logo,
+    .payhouse-logo-mobile {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Logo brand container improvements */
+.navbar-brand.logo-brand {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    margin-right: 1rem;
+}
+
+/* Ensure logo doesn't break navbar layout */
+.navbar-brand.logo-brand img {
+    display: block;
+}
+
+/* Fix navbar alignment when logo is large */
+.navbar .container-fluid {
+    align-items: center;
+}
+
+/* Mobile offcanvas header logo centering */
+.offcanvas-header .logo {
+    padding: 0.5rem 0;
+}
+
+/* Print styles - ensure logo displays properly when printing */
+@media print {
+    .payhouse-logo {
+        height: 60px;
+        max-height: 60px;
+    }
+}
