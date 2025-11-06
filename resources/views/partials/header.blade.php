@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <ul class="left-side">
-                        <li><span>Smart Solutions For Financial Needs</span></li>
+                        <li><span>Smart Loans For Financial Needs</span></li>
                         <li><a href="tel:+263777229401"><i class="flaticon-phone-call"></i> <b>Call:</b> +263 (777) 229 401</a></li>
 {{--                        <li><a href="tel:+263777229401"><i class="flaticon-phone-call"></i> <b>Call:</b> +263 (242) 708 908</a></li>--}}
                         <li><a href=""><i class="flaticon-email-1"></i> <b>Mail:</b> <span class="" data-cfemail="">info@payhousefinance.com</span></a></li>
@@ -17,8 +17,8 @@
 
                         <li>
                             <div class="flag position-relative">
-                                <img class="rounded-circle" src="assets/images/svg/flag.svg" alt="image">
-                                <select class="form-select" aria-label="Default select example">
+                                <img class="rounded-circle" src="{{ asset('assets/images/svg/flag.svg') }}" alt="Zimbabwe Flag">
+                                <select class="form-select" aria-label="Select Language">
                                     <option selected>English</option>
                                 </select>
                             </div>
@@ -33,12 +33,13 @@
     <!-- Start Navbar Area -->
     <nav class="navbar navbar-expand-lg bg-color-ffffff" id="navbar">
         <div class="container-fluid side-padding position-relative">
-            <a class="navbar-brand logo-brand p-0" href="index.html">
+            <a class="navbar-brand logo-brand p-0" href="{{ url('/') }}">
                 <img
-                    src="assets/images/payhouse_logo.png"
-                    alt="FinanceHouse Logo"
-                    class="img-fluid"
-                    style="max-height: 80px; width: auto;">
+                    src="{{ asset('assets/images/payhouse.png') }}"
+                    alt="Payhouse Finance - Loans in Zimbabwe"
+                    class="payhouse-logo"
+                    loading="eager"
+                >
             </a>
 
             <a class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
@@ -101,7 +102,7 @@
                 <ul class="d-flex align-items-center ps-0 mb-0 list-unstyled">
 
                     <li>
-                        <a href="" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                        <a href="{{url('/contact')}}" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                     </li>
                 </ul>
             </div>
@@ -113,8 +114,12 @@
 <!-- Start Mobile Navbar Area -->
 <div class="mobile-navbar offcanvas offcanvas-end border-0" data-bs-backdrop="static" tabindex="-1" id="navbarOffcanvas">
     <div class="offcanvas-header">
-        <a href="index.html" class="logo d-inline-block">
-            <img src="assets/images/payhouse_logo.png" style="height: 50px;" alt="logo">
+        <a href="{{ url('/') }}" class="logo d-inline-block">
+            <img
+                src="{{ asset('assets/images/payhouse.png') }}"
+                class="payhouse-logo-mobile"
+                alt="Payhouse Finance - Loans in Zimbabwe"
+                loading="eager">
         </a>
 
         <button type="button" class="close-btn bg-transparent position-relative lh-1 p-0 border-0" data-bs-dismiss="offcanvas" aria-label="close">
@@ -124,33 +129,33 @@
 
     <div class="offcanvas-body">
         <ul class="mobile-menu">
-
-
-
-
             <li class="mobile-menu-list without-icon active">
-                <a href="" class="nav-link ">
+                <a href="{{ url('/') }}" class="nav-link">
                     Home
                 </a>
             </li>
             <li class="mobile-menu-list without-icon">
-                <a href="contact.html" class="nav-link">
+                <a href="{{ url('/') }}#services" class="nav-link">
                     Services
                 </a>
             </li>
             <li class="mobile-menu-list without-icon">
-                <a href="contact.html" class="nav-link">
+                <a href="{{ url('/') }}#how_it_works" class="nav-link">
                     How it works
                 </a>
             </li>
-
             <li class="mobile-menu-list without-icon">
-                <a href="contact.html" class="nav-link">
+                <a href="{{ url('/') }}#team" class="nav-link">
                     Team
                 </a>
             </li>
             <li class="mobile-menu-list without-icon">
-                <a href="contact.html" class="nav-link">
+                <a href="{{ url('/') }}#faq" class="nav-link">
+                    FAQ
+                </a>
+            </li>
+            <li class="mobile-menu-list without-icon">
+                <a href="{{ url('/contact') }}" class="nav-link">
                     Contact
                 </a>
             </li>
@@ -161,7 +166,7 @@
             <ul class="d-flex align-items-center ps-0 mb-0 list-unstyled">
 
                 <li>
-                    <a href="" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                    <a href="{{url('/contact')}}" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                 </li>
             </ul>
         </div>

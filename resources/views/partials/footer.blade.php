@@ -5,17 +5,23 @@
             <div class="col-xl-3 col-lg-9 col-md-6">
                 <div class="footer-weight">
                     <div class="copy-image" data-cues="zoomIn" data-duration="700">
-                        <a href="index.html" class="d-block">
-                            <img src="assets/images/payhouse_logo.png" alt="image">
-                        </a>
+
+                            <a class="d-block navbar-brand logo-brand p-0" href="{{ url('/') }}">
+                                <img
+                                    src="{{ asset('assets/images/payhouse.png') }}"
+                                    alt="Payhouse Finance - Loans in Zimbabwe"
+                                    class="payhouse-logo"
+                                    loading="eager"
+                                >
+                            </a>
 
                     </div>
 
-                    <div class="section-heading mt-5">
+{{--                    <div class="section-heading mt-5">--}}
 
-                        <p style="color: white;" class="mb-5">Payhouse Finance is a registered microfinance institution committed to making finance accessible to all. With a presence across Harare, Marondera, and Chinhoyi, we provide a broad range of financial solutions to individuals and businesses.</p>
+{{--                        <p style="color: white;" class="mb-5">Payhouse Finance is a registered microfinance institution committed to making finance accessible to all. With a presence across Harare, Marondera, and Chinhoyi, we provide a broad range of financial solutions to individuals and businesses.</p>--}}
 
-                    </div>
+{{--                    </div>--}}
                     <ul class="social">
                         <li><span>Follow Us:</span></li>
                         <li>
@@ -133,7 +139,7 @@
         <div class="copyright-border">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-4 col-md-6">
-                    <p>© <script>document.write(new Date().getFullYear())</script> <span>PayHouse Finance</span> Developed By <a href="https://shifttechgs.com/" target="_blank">ShiftTech</a></p>
+                    <p>© <script>document.write(new Date().getFullYear())</script> <span>Payhouse Finance</span> Designed By <a href="https://shifttechgs.com/" target="_blank">ShiftTech</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="copy-image" data-cues="zoomIn" data-duration="700">
@@ -145,10 +151,10 @@
                 <div class="col-lg-4 col-md-12">
                     <ul>
                         <li>
-                            <a href="privacy-policy.html">Privacy Policy</a>
+                            <a href="{{ url('/') }}">Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="terms-conditions.html">Terms & Conditions</a>
+                            <a href="{{ url('/') }}">Terms & Conditions</a>
                         </li>
                     </ul>
                 </div>

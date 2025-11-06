@@ -33,11 +33,10 @@
                                 </i>
                                 <h3>Civil Servants</h3>
                             </div>
-                            <div class="banner-image-body">
-                                <div class="text-end">
-                                    <img class="service-image-3" src="assets/images/service/service-image-3.png" alt="image">
+                            <div class="banner-card-image" >
+                                <div class="text-center">
+                                    <img src="assets/images/hero/civil_servants.png" alt="image" class="rounded-top-image">
                                 </div>
-                                <img class="service-image-4" src="assets/images/service/service-image-4.png" alt="image">
                             </div>
                             <i class="flaticon-star-5 star-5 moveHorizontal_reverse"></i>
                         </div>
@@ -50,17 +49,17 @@
                                 </i>
                                 <h3>Salaried Individuals</h3>
                             </div>
-                            <p class="mb-0">From personal emergencies to business expansion—we have the right product for your situation.</p>
-                            <div class="banner-card-image">
-                                <div class="text-end">
-                                    <img src="assets/images/service/service-image-2.png" alt="image">
+                            <p class="mb-0">From personal emergencies to business expansion, we have the right product for your situation.</p>
+                            <div class="banner-card-image" >
+                                <div class="text-center">
+                                    <img src="assets/images/hero/personal_loans.png" alt="image" class="rounded-top-image">
                                 </div>
                             </div>
 
-                            <div class="total bg-color-ffffff radius">
-                                <h4>Total Balance</h4>
-                                <h5>$9,647.00</h5>
-                            </div>
+{{--                            <div class="total bg-color-ffffff radius">--}}
+{{--                                <h4>Total Balance</h4>--}}
+{{--                                <h5>$9,647.00</h5>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6">
@@ -71,11 +70,10 @@
                                 </i>
                                 <h3>SME'S & Vendors</h3>
                             </div>
-                            <div class="banner-image-body">
-                                <div class="text-end">
-                                    <img class="service-image-3" src="assets/images/service/service-image-3.png" alt="image">
+                            <div class="banner-card-image" >
+                                <div class="text-center">
+                                    <img src="assets/images/hero/sme.png" alt="image" class="rounded-top-image">
                                 </div>
-                                <img class="service-image-4" src="assets/images/service/service-image-4.png" alt="image">
                             </div>
                             <i class="flaticon-star-5 star-5 moveHorizontal_reverse"></i>
                         </div>
@@ -112,7 +110,7 @@
                         <span class="sub-title two bg-color-9edd05 rounded-pill">OUR KEY SERVICES</span>
                         <h2>Our Financial Services</h2>
                         <p class="mb-5">Empowering Individuals, Entrepreneurs, and Businesses with Fast Access to Finance.</p>
-                        <a href="services.html" class="default-btn two">See All Services <i class="ri-arrow-right-up-line"></i></a>
+                           <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-8">
@@ -120,49 +118,49 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="single-services-card bg-color-fffaeb radius-30">
                                 <h3>
-                                    <a href="service-details.html">Instant Personal Loans</a>
+                                    <a href="{{ url('/') }}">Instant Personal Loans</a>
                                 </h3>
                                 <p>When life happens, we deliver rapid, hassle-free loans to see you through emergencies, health expenses, or family obligations.</p>
                                 <div class="flex-warp d-flex align-items-center justify-content-between">
                                     <i class="flaticon-mission mission"></i>
-                                    <a href="service-details.html" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
+                                    <a href="{{ url('/') }}" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-services-card bg-color-fffaeb radius-30">
                                 <h3>
-                                    <a href="service-details.html">School Fees & Education Loans</a>
+                                    <a href="{{ url('/') }}">School Fees & Education Loans</a>
                                 </h3>
                                 <p>We provide flexible loans paid straight to your child’s school, supporting uninterrupted learning.</p>
                                 <div class="flex-warp d-flex align-items-center justify-content-between">
                                     <i class="flaticon-online-meeting mission"></i>
-                                    <a href="service-details.html" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
+                                    <a href="{{ url('/') }}" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-services-card bg-color-fffaeb radius-30">
                                 <h3>
-                                    <a href="service-details.html">SME & Business Loans</a>
+                                    <a href="{{ url('/') }}">SME & Business Loans</a>
                                 </h3>
                                 <p>Unlock funds to restock, invest, or scale. Our loans empower vendors, start-ups, and established businesses alike.</p>
                                 <div class="flex-warp d-flex align-items-center justify-content-between">
                                     <i class="flaticon-corporation mission"></i>
-                                    <a href="service-details.html" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
+                                    <a href="{{ url('/') }}" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="single-services-card bg-color-fffaeb radius-30">
                                 <h3>
-                                    <a href="service-details.html">Civil Servant & Pensioner Loans</a>
+                                    <a href="{{ url('/') }}">Civil Servant & Pensioner Loans</a>
                                 </h3>
                                 <p>Exclusive loan offers for those who serve the nation.
                                     We support civil servants and retirees with quick, affordable financial solutions.</p>
                                 <div class="flex-warp d-flex align-items-center justify-content-between">
                                     <i class="flaticon-investor mission"></i>
-                                    <a href="service-details.html" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
+                                    <a href="{{ url('/') }}" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +213,7 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="miss-tab-pane" role="tabpanel" aria-labelledby="miss-tab" tabindex="0">
                                     <div class="title">
-                                        <h3>Empowering Progress, One Client at a Time</h3>
+                                        <h3>Empowering Progress, One Client At A Time</h3>
                                         <p class="mb-0">Driving financial inclusion and prosperity across Zimbabwe..</p>
                                     </div>
 
@@ -234,12 +232,12 @@
                                         </li>
                                     </ul>
 
-                                    <a href="about.html" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                                    <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                                 <div class="tab-pane fade" id="qua-tab-pane" role="tabpanel" aria-labelledby="qua-tab" tabindex="0">
 
                                     <div class="title">
-                                        <h3>Excellence in Every Transaction</h3>
+                                        <h3>Excellence In Every Transaction</h3>
                                         <p class="mb-0">Dedicated to integrity, transparency, and customer-centric service.</p>
                                     </div>
 
@@ -258,11 +256,11 @@
                                         </li>
                                     </ul>
 
-                                    <a href="about.html" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                                    <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                                 <div class="tab-pane fade" id="vis-tab-pane" role="tabpanel" aria-labelledby="vis-tab" tabindex="0">
                                     <div class="title">
-                                        <h3>Shaping a Brighter Financial Landscape</h3>
+                                        <h3>Shaping A Brighter Financial Landscape</h3>
                                         <p class="mb-0">Building trust and opportunity for the next generation.</p>
                                     </div>
 
@@ -281,7 +279,7 @@
                                         </li>
                                     </ul>
 
-                                    <a href="about.html" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                                    <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                                 <div class="tab-pane fade" id="top-tab-pane" role="tabpanel" aria-labelledby="top-tab" tabindex="0">
                                     <div class="title">
@@ -304,15 +302,15 @@
                                         </li>
                                     </ul>
 
-                                    <a href="about.html" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                                    <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6" data-cues="slideInLeft" data-duration="800">
                         <div class="about-image bg-color-ffffff radius-30">
-                            <img class="about-image-1" src="assets/images/about/about-image-1.jpg" alt="image">
-                            <img class="about-image-2" src="assets/images/about/about-image-1.png" alt="image">
+                            <img class="about-image-1" src="assets/images/about/mission.png" alt="image">
+                            <img class="about-image-2" src="assets/images/about/customer_service.png" alt="image">
                         </div>
                     </div>
                 </div>
@@ -327,7 +325,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12" data-cues="slideInRight" data-duration="800">
                     <div class="choose-image position-relative">
-                        <img class="radius-30" src="assets/images/about/about-image-2.jpg" alt="image">
+                        <img class="radius-30" src="assets/images/about/meeting.png" alt="image">
 {{--                        <div class="paly-content">--}}
 {{--                            <a data-fslightbox="one" href="https://www.youtube.com/watch?v=Y7cpCDlRfV0" class="popup-btn">--}}
 {{--                                <i class="flaticon-play-buttton"></i>--}}
@@ -340,8 +338,8 @@
                         <div class="section-heading mb-0">
                             <span class="sub-title two bg-color-9edd05 rounded-pill">WHY CHOOSE US</span>
                             <h2>Why Thousands Trust Payhouse Finance</h2>
-                            <p class="mb-5">We Give More Than Loans, We’re Invested in Your Success.</p>
-                            <a href="about-us.html" class="default-btn two">Learn More <i class="ri-arrow-right-up-line"></i></a>
+                            <p class="mb-5">We Give More Than Loans, We Are Invested In Your Success.</p>
+{{--                            <a href="about-us.html" class="default-btn two">Learn More <i class="ri-arrow-right-up-line"></i></a>--}}
                         </div>
                     </div>
                 </div>
@@ -356,7 +354,7 @@
             <div class="row g-4 justify-content-center" data-cues="slideInUp" data-duration="800">
                 <div class="col-lg-4 col-md-6">
                     <div class="choose-card bg-color-fffaeb radius-30">
-                        <i class="flaticon-money-5"></i>
+                        <i class="flaticon-browser-1 businessman"></i>
                         <h3>Fast & Hassle-Free Loans</h3>
                         <p>From application to disbursement, enjoy same-day speed and efficiency.</p>
                     </div>
@@ -365,12 +363,12 @@
                     <div class="choose-card bg-color-fffaeb radius-30">
                         <i class="flaticon-dollar-symbol-1"></i>
                         <h3>Transparency & Honesty</h3>
-                        <p>No hidden costs or confusing terms—what you see is what you get.</p>
+                        <p>No hidden costs or confusing terms, what you see is what you get.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="choose-card bg-color-fffaeb radius-30">
-                        <i class="flaticon-tablet"></i>
+                        <i class="flaticon-businessman-5 businessman"></i>
                         <h3>Customer-Centric Support</h3>
                         <p>Friendly, accessible advisors on WhatsApp, phone, and in-branch.</p>
                     </div>
@@ -423,15 +421,15 @@
                             <div class="row g-4" data-cues="slideInUp" data-duration="800">
                                 <div class="col-lg-6">
                                     <div class="single-works-image">
-                                        <img class="radius-30" src="assets/images/about/about-image-3.jpg" alt="image">
+                                        <img class="radius-30" src="assets/images/app/visit.png" alt="image">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="single-works-card bg-color-29594b radius-30">
-                                        <i class="flaticon-payment-method-1 method"></i>
+                                        <i class="flaticon-global-connection method"></i>
                                         <h3 class="text-white">Apply Online or Visit Us</h3>
                                         <p class="text-white">Submit your application via our website, WhatsApp, or walk into any of our branches.</p>
-                                        <a href="contact.html" class="default-btn two">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                                        <a href="url('/contact')" class="default-btn two">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -440,7 +438,7 @@
                             <div class="row" data-cues="slideInUp" data-duration="800">
                                 <div class="col-lg-6">
                                     <div class="single-works-image">
-                                        <img class="radius-30" src="assets/images/about/about-image-10.jpg" alt="image">
+                                        <img class="radius-30" src="assets/images/app/requirements.png" alt="image">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -448,7 +446,7 @@
                                         <i class="flaticon-tablet method"></i>
                                         <h3 class="text-white">Submit Requirements</h3>
                                         <p class="text-white">Provide your latest payslip, national ID, and business documents if applicable.</p>
-                                        <a href="contact.html" class="default-btn two">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                                        <a href="url('/contact')" class="default-btn two">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -457,7 +455,7 @@
                             <div class="row" data-cues="slideInUp" data-duration="500">
                                 <div class="col-lg-6">
                                     <div class="single-works-image">
-                                        <img class="radius-30" src="assets/images/about/about-image-11.jpg" alt="image">
+                                        <img class="radius-30" src="assets/images/app/approved.png" alt="image">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -465,7 +463,7 @@
                                         <i class="flaticon-payment-method-2 method"></i>
                                         <h3 class="text-white">Get Approved</h3>
                                         <p class="text-white">We process your application quickly and transparently.</p>
-                                        <a href="contact.html" class="default-btn two">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                                        <a href="url('/contact')" class="default-btn two">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -474,15 +472,15 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="single-works-image">
-                                        <img class="radius-30" src="assets/images/about/about-image-12.jpg" alt="image">
+                                        <img class="radius-30" src="assets/images/app/paid.png" alt="image">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="single-works-card bg-color-29594b radius-30">
-                                        <i class="flaticon-businessman-4 method"></i>
+                                        <i class="flaticon-agreement-1 method"></i>
                                         <h3 class="text-white">Receive Your Funds</h3>
-                                        <p class="text-white">Enjoy instant disbursement of cash or collection of gadgets—no long waits.</p>
-                                        <a href="contact.html" class="default-btn two">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                                        <p class="text-white">Enjoy instant disbursement of cash, no long waits.</p>
+                                        <a href="url('/contact')" class="default-btn two">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -510,90 +508,16 @@
                         </div>
                         <div class="col-lg-5 col-md-5">
                             <div class="content">
-                                <p>By integrating advanced technology with financial expertise we provide a comprehensive suite of services that cater to both individuals and businesses</p>
+                                <p>By integrating advanced technology with financial expertise we provide a comprehensive suite of services that cater to both individuals and businesses.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row g-4 justify-content-center" data-cues="slideInUp" data-duration="800">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="team-card">
                             <div class="team-image position-relative">
-                                <a href="team-details.html">
-                                    <img class="radius-30" src="assets/images/team/team-image-1.jpg" alt="image">
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="https://facebook.com/" target="_blank">
-                                            <i class="ri-facebook-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/" target="_blank">
-                                            <i class="ri-twitter-x-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://instagram.com/" target="_blank">
-                                            <i class="ri-instagram-line"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://linkedin.com/" target="_blank">
-                                            <i class="ri-linkedin-fill"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="team-card-body">
-                                <h3>
-                                    <a href="team-details.html">Mirginia L. Franklin</a>
-                                </h3>
-                                <span>Investment Strategist</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="team-card">
-                            <div class="team-image position-relative">
-                                <a href="team-details.html">
-                                    <img class="radius-30" src="assets/images/team/team-image-2.jpg" alt="image">
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="https://facebook.com/" target="_blank">
-                                            <i class="ri-facebook-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/" target="_blank">
-                                            <i class="ri-twitter-x-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://instagram.com/" target="_blank">
-                                            <i class="ri-instagram-line"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://linkedin.com/" target="_blank">
-                                            <i class="ri-linkedin-fill"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="team-card-body">
-                                <h3>
-                                    <a href="team-details.html">Christian B. Salas</a>
-                                </h3>
-                                <span>CEO & Founder</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="team-card">
-                            <div class="team-image position-relative">
-                                <a href="team-details.html">
+                                <a href="">
                                     <img class="radius-30" src="assets/images/team/team-image-3.jpg" alt="image">
                                 </a>
                                 <ul>
@@ -621,12 +545,86 @@
                             </div>
                             <div class="team-card-body">
                                 <h3>
-                                    <a href="team-details.html">Brian S. Harman</a>
+                                    <a href="">Allan</a>
                                 </h3>
-                                <span>Lead Advisor</span>
+                                <span>Investment Strategist</span>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="team-card">
+                            <div class="team-image position-relative">
+                                <a href="">
+                                    <img class="radius-30" src="assets/images/team/team-image-3.jpg" alt="image">
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="https://facebook.com/" target="_blank">
+                                            <i class="ri-facebook-fill"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/" target="_blank">
+                                            <i class="ri-twitter-x-fill"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://instagram.com/" target="_blank">
+                                            <i class="ri-instagram-line"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://linkedin.com/" target="_blank">
+                                            <i class="ri-linkedin-fill"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="team-card-body">
+                                <h3>
+                                    <a href="">Maketo</a>
+                                </h3>
+                                <span>Investment Strategist</span>
+                            </div>
+                        </div>
+                    </div>
+{{--                    <div class="col-lg-4 col-md-6 col-sm-6">--}}
+{{--                        <div class="team-card">--}}
+{{--                            <div class="team-image position-relative">--}}
+{{--                                <a href="">--}}
+{{--                                    <img class="radius-30" src="assets/images/team/team-image-3.jpg" alt="image">--}}
+{{--                                </a>--}}
+{{--                                <ul>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="https://facebook.com/" target="_blank">--}}
+{{--                                            <i class="ri-facebook-fill"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="https://twitter.com/" target="_blank">--}}
+{{--                                            <i class="ri-twitter-x-fill"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="https://instagram.com/" target="_blank">--}}
+{{--                                            <i class="ri-instagram-line"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="https://linkedin.com/" target="_blank">--}}
+{{--                                            <i class="ri-linkedin-fill"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                            <div class="team-card-body">--}}
+{{--                                <h3>--}}
+{{--                                    <a href="">Brian S. Harman</a>--}}
+{{--                                </h3>--}}
+{{--                                <span>Lead Advisor</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                 </div>
             </div>
@@ -651,7 +649,7 @@
                     </div>
                     <div class="col-lg-5 col-md-5" data-cues="slideInLeft" data-duration="800">
                         <div class="content">
-                            <p>By integrating advanced technology with financial expertise we provide a comprehensive suite of services that cater to both individuals and businesses</p>
+                            <p>By integrating advanced technology with financial expertise we provide a comprehensive suite of services that cater to both individuals and businesses.</p>
                         </div>
                     </div>
                 </div>
@@ -661,7 +659,7 @@
                 <div class="col-lg-6 col-md-12">
                     <div
                         class="testimonial-image radius-30"
-                        style="background-image: url('{{asset('assets/images/about/about-image-9.jpg')}}')"
+                        style="background-image: url('{{asset('assets/images/about/testimonial.png')}}')"
 
                     >
                     </div>
@@ -687,9 +685,8 @@
 
                                             <div class="flex-warp d-flex align-items-center justify-content-between">
                                                 <div class="d-flex gap-4 align-items-center">
-                                                    <img class="user-image-4 rounded-circle" src="assets/images/user/user-image-4.jpg" alt="image">
-                                                    <div>
-                                                        <h3>Tendai M., Harare</h3>
+                                                     <div>
+                                                        <h3>Tendai M, Harare</h3>
                                                         <span>CEO & Founder</span>
                                                     </div>
                                                 </div>
@@ -712,9 +709,8 @@
 
                                             <div class="flex-warp d-flex align-items-center justify-content-between">
                                                 <div class="d-flex gap-4 align-items-center">
-                                                    <img class="user-image-4 rounded-circle" src="assets/images/user/user-image-5.jpg" alt="image">
-                                                    <div>
-                                                        <h3>Memory R., Marondera</h3>
+                                                     <div>
+                                                        <h3>Memory R, Marondera</h3>
                                                         <span>Businessman</span>
                                                     </div>
                                                 </div>
@@ -737,9 +733,8 @@
 
                                             <div class="flex-warp d-flex align-items-center justify-content-between">
                                                 <div class="d-flex gap-4 align-items-center">
-                                                    <img class="user-image-4 rounded-circle" src="assets/images/user/user-image-4.jpg" alt="image">
-                                                    <div>
-                                                        <h3>Blessing K., Chinhoyi</h3>
+                                                     <div>
+                                                        <h3>Blessing K, Chinhoyi</h3>
                                                         <span>CEO & Founder</span>
                                                     </div>
                                                 </div>
@@ -800,7 +795,7 @@
                             <h3>Frequently Asked  Questions</h3>
                             <p>With a robust suite of products ranging from digital banking and payment processing to wealth management and blockchain applications.</p>
                         </div>
-                        <img class="radius-30" src="assets/images/blog/blog-image-4.jpg" alt="image">
+                        <img class="radius-30" src="assets/images/blog/faq.png" alt="image">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12" data-cues="slideInLeft" data-duration="800">
@@ -832,7 +827,7 @@
                                 </button>
                                 <div id="collapseDinaj" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
                                     <div class="accordion-body">
-                                        <p>Absolutely—vendors, SMEs, and informal traders are welcome.</p>
+                                        <p>Absolutely vendors, SMEs, and informal traders are welcome.</p>
                                     </div>
                                 </div>
                             </div>
@@ -882,7 +877,7 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6 col-md-12" data-cues="slideInRight" data-duration="800">
                         <div class="app-image">
-                            <img class="radius-30" src="assets/images/app/app-image-5.jpg" alt="image">
+                            <img class="radius-30" src="assets/images/app/apply.png" alt="image">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12" data-cues="slideInLeft" data-duration="800">
@@ -892,7 +887,7 @@
                             <p class="mb-5">Access instant loans, flexible payments, and secure financial solutions designed for individuals and businesses like you.</p>
 
                             <div class="app-btn">
-                                <a href="about.html" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                                <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
 
                             </div>
                         </div>

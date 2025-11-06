@@ -27,7 +27,7 @@
 
 
     <!-- Start Contact Form Area -->
-    <div class="contact-form-area ptb-120">
+    <div class="contact-form-area ptb-100">
         <div class="container">
             <div class="section-title" style="max-width: 665px;">
                 <span class="sub-title two bg-color-9edd05 rounded-pill">GET IN TOUCH</span>
