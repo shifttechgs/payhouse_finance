@@ -15,7 +15,7 @@
                 <h1>The Home of Instant Cash Loans</h1>
                 <p class="mb-5">Your Fast Track to Quick Approvals and Same-Day Payouts for Workers, SMEs, Pensioners, and More.</p>
                 <div class="banner-btn">
-                    <a href="" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                    <a href="{{url('/contact')}}" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                 </div>
             </div>
         </div>
