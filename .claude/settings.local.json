@@ -4,7 +4,10 @@
       "Bash(docker-compose exec:*)",
       "Bash(docker-compose down:*)",
       "Bash(docker-compose up:*)",
-      "Bash(docker-compose logs:*)"
+      "Bash(docker-compose logs:*)",
+      "WebFetch(domain:za.pinterest.com)",
+      "Bash(mkdir:*)",
+      "Bash(cmd.exe /c \"php --ini\")"
     ],
     "deny": [],
     "ask": []

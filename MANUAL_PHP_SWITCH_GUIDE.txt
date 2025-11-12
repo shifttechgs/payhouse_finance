@@ -1,0 +1,188 @@
+================================================================================
+                 MANUAL PHP VERSION SWITCH - STEP BY STEP
+================================================================================
+
+IMPORTANT: You MUST do this through the WAMP Manager GUI, not command line!
+
+Current Status: Apache is using PHP 8.4.1 (wrong)
+Target: Switch Apache to PHP 8.3.14 (has SQL Server drivers)
+
+================================================================================
+STEP-BY-STEP INSTRUCTIONS:
+================================================================================
+
+STEP 1: Find the WAMP Icon
+---------------------------
+Look at the BOTTOM-RIGHT corner of your Windows screen (next to the clock).
+
+You should see a small "W" icon:
+- GREEN = WAMP is running (good!)
+- YELLOW = Some services are offline
+- RED = All services are stopped
+
+If you don't see it:
+- Click the UP ARROW (^) to show hidden icons
+- Look for the "W" icon there
+
+
+STEP 2: Open WAMP Menu
+-----------------------
+LEFT-CLICK (not right-click!) the WAMP "W" icon
+
+A large menu will appear from the bottom.
+
+
+STEP 3: Navigate to PHP Version
+--------------------------------
+In the menu that appeared:
+
+1. Move your mouse over "PHP"
+   (A submenu will slide out to the right)
+
+2. In that submenu, move your mouse over "Version"
+   (Another submenu will slide out)
+
+3. You will see a list like this:
+
+   □ 7.4.33
+   □ 8.0.30
+   □ 8.1.31
+   □ 8.2.26
+   □ 8.3.14    ← YOU WANT THIS ONE!
+   ✓ 8.4.1     ← Currently selected (has a checkmark)
+
+
+STEP 4: Click PHP 8.3.14
+-------------------------
+Click on "8.3.14" (the one WITHOUT the checkmark)
+
+The menu will close and you'll see messages in a command window.
+
+WAMP will automatically:
+- Stop Apache
+- Change symlinks
+- Restart Apache
+
+This takes about 10-15 seconds.
+
+
+STEP 5: Wait for GREEN Icon
+----------------------------
+Watch the WAMP icon in the system tray.
+
+It will turn:
+- RED (stopping)
+- YELLOW (starting)
+- GREEN (all running)
+
+Wait until it's GREEN before continuing!
+
+
+STEP 6: Verify the Switch
+--------------------------
+Open your web browser and go to:
+
+    http://localhost:8000/version.php
+
+You should NOW see:
+
+    PHP Version: 8.3.14
+    pdo_sqlsrv: LOADED
+    sqlsrv: LOADED
+
+If you still see 8.4.1, repeat steps 1-5 more carefully.
+
+
+STEP 7: Test Your Application
+------------------------------
+Once version.php shows 8.3.14 with drivers LOADED:
+
+1. Go to: http://localhost:8000/apply-for-loan
+
+2. Fill out all 4 steps of the form
+
+3. Click "Submit Application"
+
+4. You should be redirected to a success page!
+
+5. Check your database - the application should be saved!
+
+
+================================================================================
+TROUBLESHOOTING:
+================================================================================
+
+Problem: Can't find WAMP icon
+-------------------------------
+- Check the system tray (bottom-right, near clock)
+- Click the UP ARROW (^) to show hidden icons
+- Make sure WAMP is actually running
+
+
+Problem: Menu disappears when I move mouse
+-------------------------------------------
+- Click the WAMP icon again
+- Move mouse SLOWLY towards "PHP"
+- Don't move diagonally - move straight right
+- Keep mouse inside the menu area
+
+
+Problem: PHP 8.3.14 already has a checkmark
+--------------------------------------------
+- But version.php still shows 8.4.1?
+- This means Apache didn't restart properly
+- Try: Right-click WAMP → "Restart All Services"
+- Wait for GREEN icon
+- Refresh version.php
+
+
+Problem: WAMP icon is RED or YELLOW
+------------------------------------
+- Right-click WAMP icon
+- Click "Start All Services"
+- Wait for icon to turn GREEN
+- Then do the PHP version switch
+
+
+Problem: Error when switching
+------------------------------
+- Make sure no other Apache is running
+- Check if port 80 is free
+- Try restarting your computer
+- Then start WAMP fresh
+
+
+================================================================================
+STILL NOT WORKING?
+================================================================================
+
+If after following ALL these steps you STILL see PHP 8.4.1:
+
+1. Take a screenshot of the WAMP menu showing PHP versions
+2. Take a screenshot of http://localhost:8000/version.php
+3. Check if there are any error messages in:
+   C:\wamp64_3.3.4\logs\apache_error.log
+
+The problem might be:
+- Another Apache service running
+- Windows permissions issue
+- Port 80 in use by another program
+
+
+================================================================================
+ONCE PHP 8.3.14 IS ACTIVE:
+================================================================================
+
+You will see in version.php:
+✓ PHP Version: 8.3.14
+✓ pdo_sqlsrv: LOADED
+✓ sqlsrv: LOADED
+
+Then your loan application form will work:
+✓ Save to SQL Server database
+✓ Generate PDF
+✓ Send email notifications
+✓ Show success page
+
+Good luck!
+================================================================================

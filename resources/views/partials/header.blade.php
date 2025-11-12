@@ -102,7 +102,7 @@
                 <ul class="d-flex align-items-center ps-0 mb-0 list-unstyled">
 
                     <li>
-                        <a href="{{url('/contact')}}" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                        <a href="{{url('/apply-for-loan')}}" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                     </li>
                 </ul>
             </div>
@@ -166,7 +166,7 @@
             <ul class="d-flex align-items-center ps-0 mb-0 list-unstyled">
 
                 <li>
-                    <a href="{{url('/contact')}}" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+                    <a href="{{url('/apply-for-loan')}}" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                 </li>
             </ul>
         </div>

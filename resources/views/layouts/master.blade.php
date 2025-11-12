@@ -54,6 +54,14 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/logo-custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/hero-custom.css') }}">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Font Awesome -->
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">--}}
 
     <!-- Toastr CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
@@ -200,6 +208,41 @@
         });
     });
 
+</script>
+
+<!-- Hero Loan Calculator Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loanSlider = document.getElementById('loanAmount');
+        const amountDisplay = document.getElementById('loanAmountDisplay');
+        const repaymentInfo = document.getElementById('repaymentInfo');
+
+        if (loanSlider && amountDisplay && repaymentInfo) {
+            // Function to update calculator display
+            function updateCalculator() {
+                const amount = parseInt(loanSlider.value);
+
+                // Format the amount with commas
+                const formattedAmount = '$' + amount.toLocaleString();
+                amountDisplay.textContent = formattedAmount;
+
+                // Calculate approximate monthly repayment (12 months at 15% annual interest)
+                const monthlyRate = 0.15 / 12;
+                const months = 12;
+                const monthlyPayment = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+                                      (Math.pow(1 + monthlyRate, months) - 1);
+
+                const formattedPayment = '$' + Math.round(monthlyPayment).toLocaleString();
+                repaymentInfo.textContent = 'Repay as low as ' + formattedPayment + '/month';
+            }
+
+            // Update on slider input
+            loanSlider.addEventListener('input', updateCalculator);
+
+            // Initial update on page load
+            updateCalculator();
+        }
+    });
 </script>
 </body>
 

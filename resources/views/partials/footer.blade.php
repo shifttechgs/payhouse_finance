@@ -169,3 +169,117 @@
     <i class="ri-arrow-up-fill"></i>
 </div>
 <!-- Go top Btn End -->
+
+<!-- Floating WhatsApp Button -->
+<a href="https://api.whatsapp.com/send?phone=263777229401&text=Hi%20Payhouse.%20I%20am%20on%20your%20website%20and%20need%20some%20help%20with%20applying%20for%20a%20loan."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp">
+    <i class="ri-whatsapp-line" ></i>
+    <span class="whatsapp-text">Chat With Us</span>
+</a>
+
+<style>
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        left: 25px;
+        background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+        color: #ffffff;
+        width: auto;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        z-index: 9998;
+        transition: all 0.3s ease;
+        animation: whatsappPulse 2s ease-in-out infinite;
+    }
+
+    .whatsapp-float:hover {
+        background: linear-gradient(135deg, #20ba5a 0%, #1da851 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+        color: #ffffff;
+    }
+
+    .whatsapp-float i {
+        font-size: 26px;
+        animation: whatsappShake 1s ease-in-out infinite;
+    }
+
+    .whatsapp-text {
+        white-space: nowrap;
+    }
+
+    @keyframes whatsappPulse {
+        0%, 100% {
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+        50% {
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.6);
+        }
+    }
+
+    @keyframes whatsappShake {
+        0%, 100% {
+            transform: rotate(0deg);
+        }
+        10%, 30%, 50%, 70%, 90% {
+            transform: rotate(-10deg);
+        }
+        20%, 40%, 60%, 80% {
+            transform: rotate(10deg);
+        }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .whatsapp-float {
+            bottom: 20px;
+            left: 15px;
+            height: 50px;
+            padding: 0 16px;
+            gap: 10px;
+        }
+
+        .whatsapp-float i {
+            font-size: 22px;
+        }
+
+        .whatsapp-text {
+            font-size: 13px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .whatsapp-float {
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            justify-content: center;
+            border-radius: 50%;
+            bottom: 100px;
+            left: 15px;
+        }
+
+        .whatsapp-text {
+            display: none;
+        }
+
+        .whatsapp-float i {
+            margin: 0;
+        }
+    }
+</style>
+
+
+

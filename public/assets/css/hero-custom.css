@@ -1,0 +1,601 @@
+/* ============================================
+   HERO SECTION - HIGH CONVERTING DESIGN
+   Fixed Layout Version
+   ============================================ */
+
+/* Main Hero Container */
+.main-banner-area-new {
+    background: linear-gradient(135deg, rgba(12, 58, 48, 0.95) 0%, rgba(12, 58, 48, 0.9) 100%),
+                url('../images/hero/hero-image-1.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 180px;
+    padding-bottom: 80px;
+    position: relative;
+}
+
+/* Urgency Banner */
+.urgency-banner-top {
+    background: #ff6b35;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.urgency-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.urgency-content i {
+    font-size: 16px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Hero Row Padding */
+.hero-row-padding {
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+/* Hero Content Wrapper */
+.hero-content-wrapper {
+    color: #ffffff;
+}
+
+/* Hero Sub Title */
+.hero-sub-title {
+    display: inline-block;
+    color: #9edd05;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Hero Main Title */
+.hero-main-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.hero-highlight {
+    color: #9edd05;
+    position: relative;
+}
+
+/* Hero Description */
+.hero-description {
+    font-size: 18px;
+    font-weight: 500;
+    color: #e8e8e8;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Hero Stats Bar */
+.hero-stats-bar {
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 30px;
+}
+
+.hero-stat {
+    text-align: center;
+    padding: 10px 5px;
+}
+
+.hero-stat strong {
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+    color: #9edd05;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.hero-stat span {
+    display: block;
+    font-size: 12px;
+    color: #d0d0d0;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* Hero Benefits List */
+.hero-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.hero-benefits li {
+    padding: 10px 0;
+    font-size: 15px;
+    color: #ffffff;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-benefits li:last-child {
+    border-bottom: none;
+}
+
+.hero-benefits li i {
+    font-size: 20px;
+    color: #9edd05;
+    background: rgba(158, 221, 5, 0.2);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Hero Calculator */
+.hero-calculator {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid rgba(158, 221, 5, 0.3);
+    margin-bottom: 30px;
+}
+
+.calculator-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.loan-slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.loan-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #9edd05;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(158, 221, 5, 0.5);
+}
+
+.loan-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #9edd05;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(158, 221, 5, 0.5);
+}
+
+.calculator-result {
+    text-align: center;
+}
+
+.loan-value {
+    display: block;
+    font-size: 40px;
+    font-weight: 800;
+    color: #9edd05;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.loan-payment {
+    display: block;
+    font-size: 14px;
+    color: #d0d0d0;
+    font-weight: 500;
+}
+
+/* Hero CTA Group */
+.hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.hero-btn-primary {
+    background: #9edd05;
+    color: #0c3a30;
+    padding: 18px 30px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border: 2px solid #9edd05;
+    box-shadow: 0 6px 20px rgba(158, 221, 5, 0.3);
+    text-align: center;
+}
+
+.hero-btn-primary:hover {
+    background: #8acc04;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(158, 221, 5, 0.4);
+    color: #0c3a30;
+}
+
+.hero-btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.hero-btn-secondary small {
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Hero CTA Subtext */
+.hero-cta-subtext {
+    font-size: 13px;
+    color: #d0d0d0;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero-cta-subtext i {
+    color: #9edd05;
+    margin: 0 6px;
+}
+
+/* Hero Security Badge */
+.hero-security-badge {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px 18px;
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #d0d0d0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-security-badge i {
+    font-size: 16px;
+    color: #9edd05;
+}
+
+/* Hero Visual Column */
+.hero-visual-column {
+    padding: 20px;
+}
+
+/* Hero Trust Badges */
+.hero-trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+
+.trust-badge {
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 140px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    border-color: #9edd05;
+}
+
+.trust-badge i {
+    font-size: 45px;
+    color: #9edd05;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.trust-badge span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #082720;
+    display: block;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .main-banner-area-new {
+        padding-top: 160px;
+        padding-bottom: 60px;
+    }
+
+    .urgency-banner-top {
+        top: 110px;
+    }
+
+    .hero-row-padding {
+        padding-top: 40px;
+    }
+
+    .hero-main-title {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .loan-value {
+        font-size: 32px;
+    }
+
+    .hero-stat strong {
+        font-size: 20px;
+    }
+
+    .hero-stat span {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-banner-area-new {
+        padding-top: 140px;
+        padding-bottom: 40px;
+    }
+
+    .urgency-banner-top {
+        top: 90px;
+        font-size: 12px;
+    }
+
+    .hero-main-title {
+        font-size: 28px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-sub-title {
+        font-size: 12px;
+    }
+
+    .hero-cta-group {
+        width: 100%;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 15px;
+    }
+
+    .loan-value {
+        font-size: 28px;
+    }
+
+    .hero-stats-bar {
+        padding: 15px 10px;
+    }
+
+    .hero-stat {
+        padding: 8px 2px;
+    }
+
+    .hero-stat strong {
+        font-size: 18px;
+    }
+
+    .hero-stat span {
+        font-size: 10px;
+    }
+
+    .hero-benefits li {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .hero-benefits li i {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .trust-badge {
+        min-width: 110px;
+        padding: 20px 15px;
+    }
+
+    .trust-badge i {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .urgency-content {
+        font-size: 11px;
+    }
+
+    .hero-main-title {
+        font-size: 24px;
+    }
+
+    .hero-stat strong {
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   WHATSAPP FLOATING BUTTON
+   ============================================ */
+
+.floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    animation: whatsappPulse 2s infinite;
+}
+
+.floating:hover {
+    background: #20ba5a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    color: #ffffff;
+}
+
+.float-button {
+    font-size: 28px;
+    animation: whatsappRing 3s infinite;
+}
+
+.floating .chat {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+@keyframes whatsappPulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6);
+    }
+}
+
+@keyframes whatsappRing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    10%, 30% {
+        transform: rotate(-10deg);
+    }
+    20%, 40% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+    .floating {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 18px;
+        gap: 8px;
+    }
+
+    .floating .chat {
+        font-size: 12px;
+        max-width: 120px;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    .float-button {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating {
+        padding: 10px 15px;
+        gap: 6px;
+    }
+
+    .floating .chat {
+        display: none;
+    }
+
+    .float-button {
+        font-size: 28px;
+    }
+}

@@ -1,87 +1,57 @@
 @extends("layouts.master")
 @section("content")
 
-
-    <!-- End Banner Area -->
-
     <!-- Start Main Banner Area -->
-    <div
-        class="main-banner-area overflow-hidden position-relative"
-        style="background-image: url('{{ asset('assets/images/hero/hero-image-1.svg') }}');"
-    >
-        <div class="container-fluid banner-content side-padding pb-100">
-            <div class="align-items-center text-center">
-                <span class="sub-t">Welcome To PayHouse</span>
-                <h1>The Home of Instant Cash Loans</h1>
-                <p class="mb-5">Your Fast Track to Quick Approvals and Same-Day Payouts for Workers, SMEs, Pensioners, and More.</p>
-                <div class="banner-btn">
-                    <a href="{{url('/contact')}}" class="default-btn">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
+    <div class="main-banner-area-new overflow-hidden position-relative"
+         style="background-image: url('{{ asset('assets/images/hero/hero-image-1.svg') }}');">
+        <div class="container-fluid side-padding">
+            <div class="row align-items-center hero-row-padding">
+                <!-- Left Column - Content -->
+                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                    <div class="hero-content-wrapper section-heading">
+                        <span class="sub-title two bg-color-9edd05 rounded-pill">Welcome To Payhouse Finance</span>
+
+                        <h1 class="hero-main-title" style="color: #082720">Need Cash Today? <br>Get Approved in <span class="hero-highlight">2 Hours</span></h1>
+                        <p class="hero-description" style="color: #082720">$100 - $10,000 | Same-Day Payout | 95% Approval Rate | No Collateral Required</p>
+
+                        <div class="others-options">
+                            <ul class="d-flex align-items-center ps-0 mb-0 list-unstyled">
+
+                                <li>
+                                    <a href="{{ route('loan.apply') }}" class="default-btn"> Apply Now - Get Up to $10,000 <i class="ri-arrow-right-up-line"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
                 </div>
-            </div>
-        </div>
 
-
-
-        <div class="card-area">
-            <div class="container-fluid side-padding">
-                <div class="row g-4 justify-content-center" >
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="banner-card part-three bg-color-ffffff radius-30 position-relative">
-                            <div class="flex-warp position-relative">
-                                <i>
-                                    <img src="assets/images/svg/euro.svg" alt="image">
-                                </i>
-                                <h3>Civil Servants</h3>
+                <!-- Right Column - Trust Badges -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="hero-visual-column">
+                        <!-- Trust Badges -->
+                        <div class="hero-trust-badges">
+                            <div class="trust-badge">
+                                <i class="ri-bank-line"></i>
+                                <span>RBZ<br>Registered</span>
                             </div>
-                            <div class="banner-card-image" >
-                                <div class="text-center">
-                                    <img src="assets/images/hero/civil_servants.png" alt="image" class="rounded-top-image">
-                                </div>
+                            <div class="trust-badge">
+                                <i class="ri-shield-check-line"></i>
+                                <span>Bank-Level<br>Security</span>
                             </div>
-                            <i class="flaticon-star-5 star-5 moveHorizontal_reverse"></i>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="banner-card part-two bg-color-9edd05 radius-30 position-relative">
-                            <div class="flex-warp position-relative">
-                                <i>
-                                    <img src="assets/images/svg/corporation.svg" alt="image">
-                                </i>
-                                <h3>Salaried Individuals</h3>
+                            <div class="trust-badge">
+                                <i class="ri-award-line"></i>
+                                <span>5+ Years<br>Trusted</span>
                             </div>
-                            <p class="mb-0">From personal emergencies to business expansion, we have the right product for your situation.</p>
-                            <div class="banner-card-image" >
-                                <div class="text-center">
-                                    <img src="assets/images/hero/personal_loans.png" alt="image" class="rounded-top-image">
-                                </div>
-                            </div>
-
-{{--                            <div class="total bg-color-ffffff radius">--}}
-{{--                                <h4>Total Balance</h4>--}}
-{{--                                <h5>$9,647.00</h5>--}}
-{{--                            </div>--}}
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="banner-card part-three bg-color-ffffff radius-30 position-relative">
-                            <div class="flex-warp position-relative">
-                                <i>
-                                    <img src="assets/images/svg/euro.svg" alt="image">
-                                </i>
-                                <h3>SME'S & Vendors</h3>
-                            </div>
-                            <div class="banner-card-image" >
-                                <div class="text-center">
-                                    <img src="assets/images/hero/sme.png" alt="image" class="rounded-top-image">
-                                </div>
-                            </div>
-                            <i class="flaticon-star-5 star-5 moveHorizontal_reverse"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div><br>
+
+    </div>
     <!-- End Main Banner Area -->
 
 
@@ -110,7 +80,6 @@
                         <span class="sub-title two bg-color-9edd05 rounded-pill">OUR KEY SERVICES</span>
                         <h2>Our Financial Services</h2>
                         <p class="mb-5">Empowering Individuals, Entrepreneurs, and Businesses with Fast Access to Finance.</p>
-                           <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-8">
@@ -118,7 +87,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="single-services-card bg-color-fffaeb radius-30">
                                 <h3>
-                                    <a href="{{ url('/') }}">Instant Personal Loans</a>
+                                    <a href="{{ url('/') }}">Individual Salary Based Loans</a>
                                 </h3>
                                 <p>When life happens, we deliver rapid, hassle-free loans to see you through emergencies, health expenses, or family obligations.</p>
                                 <div class="flex-warp d-flex align-items-center justify-content-between">
@@ -127,22 +96,11 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-6 col-md-6">
                             <div class="single-services-card bg-color-fffaeb radius-30">
                                 <h3>
-                                    <a href="{{ url('/') }}">School Fees & Education Loans</a>
-                                </h3>
-                                <p>We provide flexible loans paid straight to your child’s school, supporting uninterrupted learning.</p>
-                                <div class="flex-warp d-flex align-items-center justify-content-between">
-                                    <i class="flaticon-online-meeting mission"></i>
-                                    <a href="{{ url('/') }}" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-services-card bg-color-fffaeb radius-30">
-                                <h3>
-                                    <a href="{{ url('/') }}">SME & Business Loans</a>
+                                    <a href="{{ url('/') }}">Business Loans</a>
                                 </h3>
                                 <p>Unlock funds to restock, invest, or scale. Our loans empower vendors, start-ups, and established businesses alike.</p>
                                 <div class="flex-warp d-flex align-items-center justify-content-between">
@@ -151,19 +109,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-services-card bg-color-fffaeb radius-30">
-                                <h3>
-                                    <a href="{{ url('/') }}">Civil Servant & Pensioner Loans</a>
-                                </h3>
-                                <p>Exclusive loan offers for those who serve the nation.
-                                    We support civil servants and retirees with quick, affordable financial solutions.</p>
-                                <div class="flex-warp d-flex align-items-center justify-content-between">
-                                    <i class="flaticon-investor mission"></i>
-                                    <a href="{{ url('/') }}" class="arrow-btn"><i class="ri-arrow-right-up-line"></i></a>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -200,21 +146,21 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="miss-tab" data-bs-toggle="tab" data-bs-target="#miss-tab-pane" type="button" role="tab" aria-controls="miss-tab-pane" aria-selected="true">Our Mission</button>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="qua-tab" data-bs-toggle="tab" data-bs-target="#qua-tab-pane" type="button" role="tab" aria-controls="qua-tab-pane" aria-selected="false">Our Quality</button>
-                                </li>
+
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="vis-tab" data-bs-toggle="tab" data-bs-target="#vis-tab-pane" type="button" role="tab" aria-controls="vis-tab-pane" aria-selected="false">Our Vision</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#top-tab-pane" type="button" role="tab" aria-controls="top-tab-pane" aria-selected="false">Top Security</button>
+                                    <button class="nav-link" id="qua-tab" data-bs-toggle="tab" data-bs-target="#qua-tab-pane" type="button" role="tab" aria-controls="qua-tab-pane" aria-selected="false">Our Values</button>
                                 </li>
+{{--                                <li class="nav-item" role="presentation">--}}
+{{--                                    <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#top-tab-pane" type="button" role="tab" aria-controls="top-tab-pane" aria-selected="false">Top Security</button>--}}
+{{--                                </li>--}}
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="miss-tab-pane" role="tabpanel" aria-labelledby="miss-tab" tabindex="0">
                                     <div class="title">
-                                        <h3>Empowering Progress, One Client At A Time</h3>
-                                        <p class="mb-0">Driving financial inclusion and prosperity across Zimbabwe..</p>
+                                        <h3>To be the preferred partner for all local community short term financial needs.</h3>
                                     </div>
 
                                     <ul class="check">
@@ -244,24 +190,37 @@
                                     <ul class="check">
                                         <li>
                                             <i class="ri-check-line"></i>
-                                            Personalized solutions tailored to each client’s unique needs.
+{{--                                            <h3>Transparency</h3>--}}
+                                            We commit to transparency in all our operations with all various stakeholders.
                                         </li>
                                         <li>
                                             <i class="ri-check-line"></i>
-                                            Clear, honest processes—no hidden fees, no surprises.
+                                            We commit to being a responsible business partner in all our local communities.
                                         </li>
                                         <li>
                                             <i class="ri-check-line"></i>
-                                            Friendly, knowledgeable staff committed to guiding you every step of the way.
+                                            We commit to have equal respect to all our stakeholders without discrimination.
                                         </li>
+
+                                        <li>
+                                            <i class="ri-check-line"></i>
+                                            We commit to uphold the integrity of the company and all its stakeholders.
+                                        </li>
+
+                                        <li>
+                                            <i class="ri-check-line"></i>
+                                            We commit to professionalism in all our operations at all levels.
+                                        </li>
+
+
                                     </ul>
 
                                     <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                                 <div class="tab-pane fade" id="vis-tab-pane" role="tabpanel" aria-labelledby="vis-tab" tabindex="0">
                                     <div class="title">
-                                        <h3>Shaping A Brighter Financial Landscape</h3>
-                                        <p class="mb-0">Building trust and opportunity for the next generation.</p>
+                                        <h3>To be the first choice microfinance institution in our selected markets.</h3>
+
                                     </div>
 
                                     <ul class="check">
@@ -281,29 +240,7 @@
 
                                     <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
                                 </div>
-                                <div class="tab-pane fade" id="top-tab-pane" role="tabpanel" aria-labelledby="top-tab" tabindex="0">
-                                    <div class="title">
-                                        <h3>Your Protection, Our Priority</h3>
-                                        <p class="mb-0">We employ advanced security systems and strict confidentiality so your information and transactions are always safe with us.</p>
-                                    </div>
 
-                                    <ul class="check">
-                                        <li>
-                                            <i class="ri-check-line"></i>
-                                            Advanced encryption to safeguard your personal and financial information.
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-line"></i>
-                                            Strict confidentiality protocols for every transaction.
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-line"></i>
-                                            Ongoing commitment to privacy, integrity, and secure digital experiences.
-                                        </li>
-                                    </ul>
-
-                                    <a href="" class="default-btn mt-5">Apply For Loan Today <i class="ri-arrow-right-up-line"></i></a>
-                                </div>
                             </div>
                         </div>
                     </div>
