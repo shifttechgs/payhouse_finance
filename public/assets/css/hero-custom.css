@@ -10,8 +10,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 180px;
-    padding-bottom: 80px;
+    padding-top: 160px;
+    padding-bottom: 40px;
     position: relative;
 }
 
@@ -48,8 +48,8 @@
 
 /* Hero Row Padding */
 .hero-row-padding {
-    padding-top: 100px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /* Hero Content Wrapper */
@@ -60,7 +60,7 @@
 /* Hero Sub Title */
 .hero-sub-title {
     display: inline-block;
-    color: #9edd05;
+    color: #2596be;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 1.5px;
@@ -78,7 +78,7 @@
 }
 
 .hero-highlight {
-    color: #9edd05;
+    color: #009328;
     position: relative;
 }
 
@@ -111,7 +111,7 @@
     display: block;
     font-size: 24px;
     font-weight: 800;
-    color: #9edd05;
+    color: #2596be;
     margin-bottom: 5px;
     line-height: 1;
 }
@@ -147,7 +147,7 @@
 
 .hero-benefits li i {
     font-size: 20px;
-    color: #9edd05;
+    color: #2596be;
     background: rgba(158, 221, 5, 0.2);
     width: 30px;
     height: 30px;
@@ -195,7 +195,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: #9edd05;
+    background: #2596be;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(158, 221, 5, 0.5);
 }
@@ -204,7 +204,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: #9edd05;
+    background: #2596be;
     cursor: pointer;
     border: none;
     box-shadow: 0 0 10px rgba(158, 221, 5, 0.5);
@@ -218,7 +218,7 @@
     display: block;
     font-size: 40px;
     font-weight: 800;
-    color: #9edd05;
+    color: #2596be;
     margin-bottom: 8px;
     line-height: 1;
 }
@@ -239,7 +239,7 @@
 }
 
 .hero-btn-primary {
-    background: #9edd05;
+    background: #2596be;
     color: #0c3a30;
     padding: 18px 30px;
     border-radius: 50px;
@@ -251,7 +251,7 @@
     justify-content: center;
     gap: 10px;
     transition: all 0.3s ease;
-    border: 2px solid #9edd05;
+    border: 2px solid #2596be;
     box-shadow: 0 6px 20px rgba(158, 221, 5, 0.3);
     text-align: center;
 }
@@ -304,7 +304,7 @@
 }
 
 .hero-cta-subtext i {
-    color: #9edd05;
+    color: #2596be;
     margin: 0 6px;
 }
 
@@ -323,7 +323,7 @@
 
 .hero-security-badge i {
     font-size: 16px;
-    color: #9edd05;
+    color: #2596be;
 }
 
 /* Hero Visual Column */
@@ -355,12 +355,12 @@
 .trust-badge:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
-    border-color: #9edd05;
+    border-color: #2596be;
 }
 
 .trust-badge i {
     font-size: 45px;
-    color: #9edd05;
+    color: #2596be;
     margin-bottom: 15px;
     display: block;
 }
@@ -597,5 +597,183 @@
 
     .float-button {
         font-size: 28px;
+    }
+}
+
+/* ============================================
+   CONTACT PAGE PREMIUM STYLES
+   ============================================ */
+
+/* Contact Form Wrapper */
+.contact-form-wrapper {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(12, 58, 48, 0.1);
+}
+
+.contact-form-wrapper .form-control,
+.contact-form-wrapper .form-select {
+    border: 2px solid #e8e8e8;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+.contact-form-wrapper .form-control:focus,
+.contact-form-wrapper .form-select:focus {
+    border-color: #0c3a30;
+    box-shadow: 0 0 0 0.2rem rgba(12, 58, 48, 0.1);
+    background-color: #ffffff;
+}
+
+.contact-form-wrapper .form-label {
+    color: #0c3a30;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.contact-form-wrapper textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Contact Details Card */
+.contact-details-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 40px rgba(12, 58, 48, 0.15);
+}
+
+.contact-details-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(12, 58, 48, 0.25);
+}
+
+.contact-detail-item {
+    transition: all 0.3s ease;
+    padding: 0;
+    border-radius: 12px;
+}
+
+.contact-detail-item:hover {
+    padding-left: 10px;
+}
+
+.contact-icon-box {
+    transition: all 0.3s ease;
+}
+
+.contact-detail-item:hover .contact-icon-box {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(158, 221, 5, 0.25) !important;
+}
+
+/* Map Section */
+.contact-map-area {
+    position: relative;
+}
+
+.map-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.contact-map {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.map-wrapper:hover .contact-map {
+    transform: scale(1.02);
+}
+
+/* Form Submit Button Enhancement */
+.contact-form-wrapper .default-btn {
+    padding: 14px 32px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(12, 58, 48, 0.2);
+}
+
+.contact-form-wrapper .default-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(12, 58, 48, 0.3);
+}
+
+/* Alert Styling Enhancement */
+.alert.radius-30 {
+    border: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+}
+
+/* Mobile Responsive for Contact Page */
+@media (max-width: 991px) {
+    .contact-details-card {
+        margin-top: 20px;
+    }
+
+    .contact-form-wrapper,
+    .contact-details-card {
+        padding: 30px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-form-wrapper,
+    .contact-details-card {
+        padding: 25px !important;
+    }
+
+    .contact-detail-item h5 {
+        font-size: 15px !important;
+    }
+
+    .contact-detail-item p {
+        font-size: 13px !important;
+    }
+
+    .contact-icon-box {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .contact-icon-box i {
+        font-size: 1.3rem !important;
+    }
+
+    .contact-map {
+        height: 400px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .contact-form-wrapper h3,
+    .contact-details-card h3 {
+        font-size: 20px !important;
+    }
+
+    .contact-form-wrapper .form-control,
+    .contact-form-wrapper .form-select {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .contact-map {
+        height: 350px !important;
     }
 }

@@ -56,7 +56,7 @@
                             <a href="{{ url('/') }}#services">Services</a>
                         </li>
                         <li>
-                            <a href="{{ url('/') }}#how_it_works">How it works</a>
+                            <a href="{{ url('/') }}#how_to_apply">How To Apply</a>
                         </li>
                         <li>
                             <a href="{{ url('/') }}#team">Our Team</a>
@@ -66,7 +66,7 @@
                             <a href="{{ url('/') }}#faq">FAQ</a>
                         </li>
                         <li>
-                            <a href="{{ url('/') }}">Contact Us</a>
+                            <a href="{{  url('/contact') }}">Contact Us</a>
                         </li>
 
                     </ul>
@@ -186,7 +186,7 @@
         position: fixed;
         bottom: 30px;
         left: 25px;
-        background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+        background: linear-gradient(135deg, #009328 0%, #20ba5a 100%);
         color: #ffffff;
         width: auto;
         height: 56px;
@@ -205,7 +205,7 @@
     }
 
     .whatsapp-float:hover {
-        background: linear-gradient(135deg, #20ba5a 0%, #1da851 100%);
+        background: linear-gradient(135deg, #009328 0%, #1da851 100%);
         transform: translateY(-3px);
         box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
         color: #ffffff;

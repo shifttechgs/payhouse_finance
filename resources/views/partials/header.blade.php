@@ -13,11 +13,11 @@
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <ul class="right-side">
-                        <li><a href="#">Support</a></li>
+                        <li><a href="{{  url('/contact') }}">Support</a></li>
 
                         <li>
                             <div class="flag position-relative">
-                                <img class="rounded-circle" src="{{ asset('assets/images/svg/flag.svg') }}" alt="Zimbabwe Flag">
+                                <img class="rounded-circle" src="{{ asset('assets/images/svg/zw.svg') }}" alt="Zimbabwe Flag">
                                 <select class="form-select" aria-label="Select Language">
                                     <option selected>English</option>
                                 </select>
@@ -54,44 +54,56 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link  active" href="{{ url('/') }}"
-                           >
+                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">
                             Home
                         </a>
-
-
                     </li>
 
-
-
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/')}}#services">
+                        <a class="nav-link dropdown-toggle {{ request()->is('business-loans') || request()->is('personal-loans') ? 'active' : '' }}"
+                           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Services
                         </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item {{ request()->is('business-loans') ? 'active' : '' }}"
+                                   href="{{ url('/business-loans') }}">
+                                    Business Loans
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {{ request()->is('personal-loans') ? 'active' : '' }}"
+                                   href="{{ url('/personal-loans') }}">
+                                    Personal Loans
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
-
-
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/') }}#how_it_works">
-                           How it works
+                        <a class="nav-link {{ request()->is('/') && request()->has('how_to_apply') ? 'active' : '' }}"
+                           href="{{ url('/') }}#how_to_apply">
+                           How To Apply
                         </a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/') }}#team">
-                           Team
-                        </a>
-                    </li>
+{{--                    <li class="nav-item dropdown">--}}
+{{--                        <a class="nav-link" href="{{ url('/') }}#team">--}}
+{{--                           Team--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/') }}#faq">
+                        <a class="nav-link {{ request()->is('/') && request()->has('faq') ? 'active' : '' }}"
+                           href="{{ url('/') }}#faq">
                             FAQ
                         </a>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{  url('/contact') }}">
+                        <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}"
+                           href="{{  url('/contact') }}">
                             Contact
                         </a>
                     </li>
@@ -129,32 +141,32 @@
 
     <div class="offcanvas-body">
         <ul class="mobile-menu">
-            <li class="mobile-menu-list without-icon active">
+            <li class="mobile-menu-list without-icon {{ request()->is('/') ? 'active' : '' }}">
                 <a href="{{ url('/') }}" class="nav-link">
                     Home
                 </a>
             </li>
-            <li class="mobile-menu-list without-icon">
+            <li class="mobile-menu-list without-icon {{ request()->is('business-loans') || request()->is('personal-loans') ? 'active' : '' }}">
                 <a href="{{ url('/') }}#services" class="nav-link">
                     Services
                 </a>
             </li>
-            <li class="mobile-menu-list without-icon">
+            <li class="mobile-menu-list without-icon {{ request()->is('/') && request()->has('how_it_works') ? 'active' : '' }}">
                 <a href="{{ url('/') }}#how_it_works" class="nav-link">
-                    How it works
+                    How To Apply
                 </a>
             </li>
-            <li class="mobile-menu-list without-icon">
-                <a href="{{ url('/') }}#team" class="nav-link">
-                    Team
-                </a>
-            </li>
-            <li class="mobile-menu-list without-icon">
+{{--            <li class="mobile-menu-list without-icon">--}}
+{{--                <a href="{{ url('/') }}#team" class="nav-link">--}}
+{{--                    Team--}}
+{{--                </a>--}}
+{{--            </li>--}}
+            <li class="mobile-menu-list without-icon {{ request()->is('/') && request()->has('faq') ? 'active' : '' }}">
                 <a href="{{ url('/') }}#faq" class="nav-link">
                     FAQ
                 </a>
             </li>
-            <li class="mobile-menu-list without-icon">
+            <li class="mobile-menu-list without-icon {{ request()->is('contact') ? 'active' : '' }}">
                 <a href="{{ url('/contact') }}" class="nav-link">
                     Contact
                 </a>

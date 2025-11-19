@@ -48,7 +48,7 @@
         border-radius: 25px;
         margin-top: 15px;
         font-weight: 600;
-        color: #9edd05;
+        color: #009328;
         font-size: 14px;
     }
 
@@ -79,7 +79,7 @@
     }
 
     .step.active:not(:last-child)::after {
-        background: #9edd05;
+        background: #009328;
     }
 
     .step-circle {
@@ -99,8 +99,8 @@
     }
 
     .step.active .step-circle {
-        background: #9edd05;
-        color: #0c3a30;
+        background: #009328;
+        color: #ffffff;
         transform: scale(1.1);
     }
 
@@ -151,7 +151,7 @@
         color: #0c3a30;
         margin-bottom: 25px;
         padding-bottom: 15px;
-        border-bottom: 3px solid #9edd05;
+        border-bottom: 3px solid #009328;
     }
 
     .form-group {
@@ -181,7 +181,7 @@
     }
 
     .form-control:focus, .form-select:focus {
-        border-color: #9edd05;
+        border-color: #009328;
         outline: none;
         box-shadow: 0 0 0 4px rgba(158, 221, 5, 0.1);
     }
@@ -219,7 +219,7 @@
         width: 20px;
         height: 20px;
         cursor: pointer;
-        accent-color: #9edd05;
+        accent-color: #009328;
     }
 
     .radio-item label,
@@ -272,14 +272,14 @@
     }
 
     .btn-next, .btn-submit {
-        background: #9edd05;
-        color: #0c3a30;
+        background: #009328;
+        color: #ffffff;
         box-shadow: 0 4px 15px rgba(158, 221, 5, 0.3);
         margin-left: auto;
     }
 
     .btn-next:hover, .btn-submit:hover {
-        background: #8acc04;
+        background: #009328;
         transform: translateX(3px);
         box-shadow: 0 6px 20px rgba(158, 221, 5, 0.4);
     }
@@ -318,14 +318,14 @@
     /* Info Box */
     .info-box {
         background: #e7f5ff;
-        border-left: 4px solid #1971c2;
+        border-left: 4px solid #009328;
         padding: 15px;
         border-radius: 8px;
         margin-bottom: 25px;
     }
 
     .info-box i {
-        color: #1971c2;
+        color: #009328;
         margin-right: 10px;
     }
 
@@ -389,7 +389,7 @@
     .success-modal-icon {
         width: 100px;
         height: 100px;
-        background: linear-gradient(135deg, #9edd05 0%, #7ab904 100%);
+        background: linear-gradient(135deg, #009328 0%, #009328 100%);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -459,7 +459,7 @@
 
     .modal-detail-item i {
         font-size: 22px;
-        color: #9edd05;
+        color: #009328;
         min-width: 22px;
         margin-top: 2px;
     }
@@ -472,7 +472,7 @@
     }
 
     .btn-modal-home {
-        background: linear-gradient(135deg, #9edd05 0%, #7ab904 100%);
+        background: linear-gradient(135deg, #009328 0%, #009328 100%);
         color: #0c3a30;
         padding: 16px 45px;
         border-radius: 50px;
@@ -489,7 +489,7 @@
     }
 
     .btn-modal-home:hover {
-        background: linear-gradient(135deg, #7ab904 0%, #6aa803 100%);
+        background: linear-gradient(135deg, #009328 0%, #009328 100%);
         transform: translateY(-3px);
         box-shadow: 0 10px 35px rgba(158, 221, 5, 0.45);
         color: #0c3a30;
@@ -513,14 +513,14 @@
     }
 
     .success-modal-footer a {
-        color: #9edd05;
+        color: #009328;
         text-decoration: none;
         font-weight: 600;
         transition: color 0.3s ease;
     }
 
     .success-modal-footer a:hover {
-        color: #7ab904;
+        color: #009328;
     }
 
     @media (max-width: 768px) {

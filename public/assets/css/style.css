@@ -32,7 +32,7 @@ Default Font Style
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #9edd05;
+  --bs-primary: #009328;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -98,10 +98,10 @@ Default Font Style
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
   --bs-heading-color: inherit;
-  --bs-link-color: #9edd05;
-  --bs-link-color-rgb: 158, 221, 5;
+  --bs-link-color: #009328;
+  --bs-link-color-rgb: #009328;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: #7eb104;
+  --bs-link-hover-color: #009328;
   --bs-link-hover-color-rgb: 126, 177, 4;
   --bs-code-color: #d63384;
   --bs-highlight-color: #212529;
@@ -173,7 +173,7 @@ Default Font Style
   --bs-heading-color: inherit;
   --bs-link-color: #c5eb69;
   --bs-link-hover-color: #d1ef87;
-  --bs-link-color-rgb: 197, 235, 105;
+  --bs-link-color-rgb: #009328;
   --bs-link-hover-color-rgb: 209, 239, 135;
   --bs-code-color: #e685b5;
   --bs-highlight-color: #dee2e6;
@@ -356,7 +356,7 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+  --bs-link-color-rgb: #009328;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -734,7 +734,7 @@ progress {
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #9edd05;
+  --bs-primary: #009328;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -800,10 +800,10 @@ progress {
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
   --bs-heading-color: inherit;
-  --bs-link-color: #9edd05;
-  --bs-link-color-rgb: 158, 221, 5;
+  --bs-link-color: #009328;
+  --bs-link-color-rgb: #009328;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: #7eb104;
+  --bs-link-hover-color: #009328;
   --bs-link-hover-color-rgb: 126, 177, 4;
   --bs-code-color: #d63384;
   --bs-highlight-color: #212529;
@@ -875,7 +875,7 @@ progress {
   --bs-heading-color: inherit;
   --bs-link-color: #c5eb69;
   --bs-link-hover-color: #d1ef87;
-  --bs-link-color-rgb: 197, 235, 105;
+  --bs-link-color-rgb: #009328;
   --bs-link-hover-color-rgb: 209, 239, 135;
   --bs-code-color: #e685b5;
   --bs-highlight-color: #dee2e6;
@@ -1054,11 +1054,11 @@ sup {
 }
 
 a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  color: #009328;
   text-decoration: underline;
 }
 a:hover {
-  --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+  --bs-link-color-rgb: #009328;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -12826,7 +12826,7 @@ img {
 }
 
 .bg-color-9edd05 {
-  background-color: #9edd05;
+  background-color: #009328;
 }
 
 .bg-color-29594b {
@@ -12834,7 +12834,7 @@ img {
 }
 
 .bg-color-fffaeb {
-  background-color: #fffaeb;
+  background-color: #edf1ee;
 }
 
 .bg-color-edf1ee {
@@ -12856,10 +12856,10 @@ img {
   display: inline-block;
   position: relative;
   border-radius: 10px;
-  background-color: #9edd05;
+  background-color: #009328;
   padding: 18px 30px 18px;
   font-weight: 600;
-  color: #082720;
+  color: #ffffff;
   line-height: normal;
   transition: all ease 0.5s;
 }
@@ -12873,7 +12873,7 @@ img {
 }
 .default-btn.two:hover {
   color: #082720;
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .default-btn.three {
   color: #082720;
@@ -12913,7 +12913,7 @@ img {
   margin-bottom: 18px;
 }
 .section-heading .sub-title.two {
-  color: #082720;
+  color: #ffffff;
   display: -webkit-inline-box;
   padding: 10px 20px;
 }
@@ -12998,7 +12998,7 @@ Top Header Area CSS
 .top-header-area .left-side li a i {
   top: 1px;
   left: 0;
-  color: #9edd05;
+  color: #009328;
   position: absolute;
   font-size: 18px;
   line-height: 1;
@@ -13113,10 +13113,10 @@ Navbar Area CSS
   font-family: remixicon !important;
 }
 .navbar .navbar-nav .nav-item .nav-link.active, .navbar .navbar-nav .nav-item .nav-link:hover {
-  color: #9edd05 !important;
+  color: #009328 !important;
 }
 .navbar .navbar-nav .nav-item .nav-link.active::after, .navbar .navbar-nav .nav-item .nav-link:hover::after {
-  color: #9edd05 !important;
+  color: #009328 !important;
 }
 .navbar .navbar-nav .nav-item .dropdown-menu {
   left: 0;
@@ -13131,7 +13131,7 @@ Navbar Area CSS
   background-color: #ffffff;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0.275rem 1.25rem rgba(11, 15, 25, 0.05), 0 0.25rem 0.5625rem rgba(11, 15, 25, 0.03);
-  border-left: 2px solid #9edd05;
+  border-left: 2px solid #009328;
   transform: translateY(-10%);
 }
 .navbar .navbar-nav .nav-item .dropdown-menu li {
@@ -13171,14 +13171,14 @@ Navbar Area CSS
   padding: 3px 10px 6px;
   font-size: 15px;
   border-radius: 5px;
-  background-color: #9edd05;
+  background-color: #009328;
   margin-left: 10px;
 }
 .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-item.active {
-  color: #9edd05;
+  color: #009328;
 }
 .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-item:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
   visibility: hidden;
@@ -13188,10 +13188,10 @@ Navbar Area CSS
   top: 0;
 }
 .navbar .navbar-nav .nav-item .dropdown-menu li:hover .sub-dropdown {
-  color: #9edd05;
+  color: #009328;
 }
 .navbar .navbar-nav .nav-item .dropdown-menu li:hover .sub-dropdown.dropdown-toggle::after {
-  color: #9edd05;
+  color: #009328;
 }
 .navbar .navbar-nav .nav-item .dropdown-menu li:hover .dropdown-menu {
   visibility: visible;
@@ -13202,10 +13202,10 @@ Navbar Area CSS
   font-weight: 400;
 }
 .navbar .navbar-nav .nav-item:hover .nav-link {
-  color: #9edd05 !important;
+  color: #009328 !important;
 }
 .navbar .navbar-nav .nav-item:hover .nav-link.dropdown-toggle::after {
-  color: #9edd05 !important;
+  color: #009328 !important;
 }
 .navbar .navbar-nav .nav-item:hover .dropdown-menu {
   opacity: 1;
@@ -14629,14 +14629,14 @@ Home Three Services Area CSS
   line-height: 50px;
   text-align: center;
   border-radius: 100%;
-  background-color: #9edd05;
-  color: #0c3a30;
+  background-color: #0c3a30;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 600;
   transition: all ease 0.5s;
 }
 .arrow-btn:hover {
-  color: #9edd05;
+  color: #009328;
   background-color: #0c3a30;
 }
 
@@ -14683,7 +14683,7 @@ About Us Area CSS
 }
 .about-content .nav-tabs .nav-item .nav-link.active, .about-content .nav-tabs .nav-item .nav-link:hover {
   color: #ffffff;
-  background-color: #082720;
+  background-color: #009328;
 }
 .about-content .nav-tabs .nav-item:last-child {
   margin-right: 0;
@@ -14844,7 +14844,7 @@ Home Three About Us Area CSS
 Why Choose Us Area CSS
 ===================================================*/
 .choose-card-area .section-title p {
-  color: #9edd05;
+  color: #009328;
   font-weight: 700;
   letter-spacing: 1.6px;
 }
@@ -14901,13 +14901,13 @@ Why Choose Us Area CSS
 .choose-card i {
   display: inline-block;
   font-size: 45px;
-  color: #082720;
+  color: #009328;
   width: 80px;
   height: 80px;
   line-height: 92px;
   text-align: center;
   border-radius: 20px;
-  background-color: #9edd05;
+  background-color: #ffffff;
   margin-bottom: 35px;
   transition: all ease 0.5s;
 }
@@ -14917,7 +14917,7 @@ Why Choose Us Area CSS
   margin-bottom: 20px;
 }
 .choose-card:hover i {
-  color: #9edd05;
+  color: #ffffff;
   background-color: #082720;
 }
 
@@ -15041,7 +15041,7 @@ How It Works Area CSS
 }
 .works-btn .nav-tabs .nav-link.active, .works-btn .nav-tabs .nav-link:hover {
   color: #082720;
-  background-color: #9edd05;
+  background-color: #009328;
 }
 
 .single-works-card {
@@ -15050,12 +15050,12 @@ How It Works Area CSS
 .single-works-card .method {
   display: inline-block;
   font-size: 45px;
-  color: #082720;
+  color: #009328;
   width: 80px;
   height: 80px;
   line-height: 88px;
   border-radius: 20px;
-  background-color: #9edd05;
+  background-color: #ffffff;
   text-align: center;
   margin-bottom: 35px;
 }
@@ -15194,11 +15194,11 @@ Pricing Plan Area CSS
 }
 .pricing-card:hover .title, .pricing-card.active .title {
   border-radius: 30px 30px 0 0;
-  background-color: #9edd05;
+  background-color: #009328;
   border-bottom: 1px solid transparent;
 }
 .pricing-card:hover .default-btn.two, .pricing-card.active .default-btn.two {
-  background-color: #9edd05 !important;
+  background-color: #009328 !important;
 }
 
 /*
@@ -15258,7 +15258,7 @@ Home Two Pricing Area CSS
   line-height: 20px;
   border-radius: 100%;
   text-align: center;
-  background-color: #9edd05;
+  background-color: #009328;
   transform: translateY(-50%);
 }
 .choose-btn .nav-tabs .nav-item .nav-link:hover, .choose-btn .nav-tabs .nav-item .nav-link.active {
@@ -15322,7 +15322,7 @@ Testimonials Area CSS
 .testimonials-card .flex-warp .user-image-4 {
   width: 90px;
   height: 90px;
-  border: 2px solid #9edd05;
+  border: 2px solid #009328;
   object-fit: none;
 }
 .testimonials-card .flex-warp h3, .testimonials-card .flex-warp .h3 {
@@ -15346,7 +15346,7 @@ Home Two Testimonial Area CSS
   padding: 60px 60px;
 }
 .testimonial-said h2, .testimonial-said .h2 {
-  color: #9edd05;
+  color: #ffffff;
   font-size: 30px;
   line-height: 1;
   margin-bottom: 30px;
@@ -15392,7 +15392,7 @@ Home Two Testimonial Area CSS
 Home Three Reviews Area CSS
 ===================================================*/
 .reviews-area .section-heading .sub-title {
-  color: #9edd05;
+  color: #009328;
 }
 
 .review-card {
@@ -15616,7 +15616,7 @@ Home Three Financial Planning Blog Area CSS
   line-height: 68px;
   text-align: center;
   border-radius: 10px;
-  background-color: #9edd05;
+  background-color: #009328;
   margin-right: 25px;
 }
 .planning-card .title h3, .planning-card .title .h3 {
@@ -15650,7 +15650,7 @@ FAQ Area CSS
 .faq-content .accordion-item {
   margin-bottom: 20px;
   border-radius: 0;
-  background-color: #fffaeb;
+  background-color: #edf1ee;
   border: none;
 }
 .faq-content .accordion-item:last-child {
@@ -15759,7 +15759,7 @@ Newsletter Area CSS
   margin-left: auto;
 }
 .newsletter.two .section-heading .sub-title {
-  color: #9edd05;
+  color: #009328;
 }
 .newsletter.two .newsletter-btn {
   text-align: end;
@@ -15823,7 +15823,7 @@ Footer Area CSS
   height: 3px;
   content: "";
   position: absolute;
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .footer-weight .social {
   padding-left: 0;
@@ -15852,7 +15852,7 @@ Footer Area CSS
   font-size: 15px;
 }
 .footer-weight .social li a:hover {
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .footer-weight .social li:last-child {
   margin-right: 0;
@@ -15870,7 +15870,7 @@ Footer Area CSS
   color: #ffffff;
 }
 .footer-weight .service-link li a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .footer-weight .service-link li:last-child {
   margin-bottom: 0;
@@ -15920,7 +15920,7 @@ Footer Area CSS
   color: #072720;
 }
 .footer-form .form-control:focus {
-  border-color: #9edd05;
+  border-color: #009328;
 }
 .footer-form .default-btn {
   top: 7px;
@@ -15947,11 +15947,11 @@ Copyright Area CSS
   color: #ffffff;
 }
 .copyright-area p span {
-  color: #9edd05;
+  color: #009328;
   font-weight: 600;
 }
 .copyright-area p a {
-  color: #9edd05;
+  color: #009328;
   font-weight: 600;
 }
 .copyright-area p a:hover {
@@ -15980,14 +15980,14 @@ Copyright Area CSS
   content: "";
   position: absolute;
   border-radius: 100%;
-  background-color: #9edd05;
+  background-color: #009328;
   transform: translateY(-50%);
 }
 .copyright-area ul li a {
   color: #ffffff;
 }
 .copyright-area ul li a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .copyright-area ul li:last-child {
   margin-right: 0;
@@ -16005,7 +16005,7 @@ Copyright Area CSS
   color: #082720;
 }
 .copyright-area.two p a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .copyright-area.two ul li::before {
   background-color: #082720;
@@ -16014,7 +16014,7 @@ Copyright Area CSS
   color: #072720;
 }
 .copyright-area.two ul li a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 
 /*
@@ -16125,7 +16125,7 @@ Financial Area CSS
   line-height: 90px;
   text-align: center;
   border-radius: 100%;
-  background-color: #9edd05;
+  background-color: #009328;
   transition: all ease 0.5s;
 }
 .financial-content ul li h3, .financial-content ul li .h3 {
@@ -16134,7 +16134,7 @@ Financial Area CSS
   margin-bottom: 15px;
 }
 .financial-content ul li:hover i {
-  color: #9edd05;
+  color: #009328;
   background-color: #082720;
 }
 .financial-content ul li:last-child {
@@ -16158,7 +16158,7 @@ Features Area CSS
   height: 80px;
   line-height: 94px;
   border-radius: 10px;
-  background-color: #9edd05;
+  background-color: #009328;
   text-align: center;
 }
 .single-features-card h3, .single-features-card .h3 {
@@ -16167,7 +16167,7 @@ Features Area CSS
   margin-bottom: 20px;
 }
 .single-features-card:hover {
-  border: 1px solid #46b900;
+  border: 1px solid #009328;
   transform: translateY(-7px);
 }
 
@@ -16217,7 +16217,7 @@ Financial Planning Area CSS
   line-height: 62px;
   text-align: center;
   border-radius: 100%;
-  background-color: #9edd05;
+  background-color: #009328;
   transition: all ease 0.5s;
 }
 .payments-processing-area .processing li h3, .payments-processing-area .processing li .h3 {
@@ -16229,7 +16229,7 @@ Financial Planning Area CSS
   border: 1px solid rgba(12, 58, 48, 0.534);
 }
 .payments-processing-area .processing li:hover .number {
-  color: #9edd05;
+  color: #009328;
   background-color: #082720;
 }
 .payments-processing-area .processing li:last-child {
@@ -16301,7 +16301,7 @@ Account Area CSS
   line-height: 32px;
   text-align: center;
   border-radius: 100%;
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .single-account h3, .single-account .h3 {
   font-size: 24px;
@@ -16325,7 +16325,7 @@ About Page
 }
 .about-area.two .about-us-content .check li {
   color: #072720;
-  background-color: #fffaeb;
+  background-color: #edf1ee;
 }
 
 .choose-card-area.about-choose .section-title p {
@@ -16379,7 +16379,7 @@ Service Details Page
 .service-details-content .check li i {
   top: 2px;
   left: 0;
-  color: #082720;
+  color: #ffffff;
   position: absolute;
   font-size: 12px;
   font-weight: 700;
@@ -16388,7 +16388,7 @@ Service Details Page
   line-height: 20px;
   text-align: center;
   border-radius: 100%;
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .service-details-content .check li:last-child {
   margin-bottom: 0;
@@ -16436,7 +16436,7 @@ Service Details Page
   border: none;
   height: 50px;
   border-radius: 0px 10px 10px 0px;
-  background-color: #9edd05;
+  background-color: #009328;
   padding: 10px 16px;
 }
 .sidebar .sidebar-form .sidebar-btn i {
@@ -16467,7 +16467,7 @@ Service Details Page
   color: #0c3a30;
 }
 .sidebar .popular-services ul li a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .sidebar .popular-services ul li:last-child {
   margin-bottom: 0;
@@ -16511,7 +16511,7 @@ Service Details Page
   color: #072720;
 }
 .sidebar .form-sidebar .form-control:focus {
-  border-color: #9edd05;
+  border-color: #009328;
 }
 .sidebar .form-sidebar .textarea {
   min-height: 150px;
@@ -16617,8 +16617,8 @@ Service Details Page
   background-color: #edf1ee;
 }
 .sidebar .pay-pal-card .form-check .form-check-input:checked {
-  background-color: #9edd05;
-  border-color: #9edd05;
+  background-color: #009328;
+  border-color: #009328;
 }
 .sidebar .pay-pal-card .form-check .form-check-input:focus {
   box-shadow: none;
@@ -16680,7 +16680,7 @@ Team Page
   background-color: #ffffff;
 }
 .team-card .team-image ul li a:hover {
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .team-card .team-image ul li:last-child {
   margin-right: 0;
@@ -16741,7 +16741,7 @@ Team Details Page
   color: #072720;
 }
 .team-profile-info .address li a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .team-profile-info .address li:last-child {
   margin-right: 0;
@@ -16773,7 +16773,7 @@ Team Details Page
   background-color: #edf1ee;
 }
 .team-profile-info .social li a:hover {
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .team-profile-info .social li:last-child {
   margin-right: 0;
@@ -16806,7 +16806,7 @@ Team Details Page
   line-height: 20px;
   text-align: center;
   border-radius: 100%;
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .profile-skills ul li:last-child {
   margin-bottom: 0;
@@ -16943,7 +16943,7 @@ My Account Page
   color: #072720;
 }
 .login-form .login-warp a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .login-form .form-check {
   min-height: 0;
@@ -16957,11 +16957,11 @@ My Account Page
   width: 18px;
   height: 18px;
   border: 1px solid #072720;
-  background-color: #fffaeb;
+  background-color: #edf1ee;
 }
 .login-form .form-check .form-check-input:focus {
-  border-color: #9edd05;
-  background-color: #9edd05;
+  border-color: #009328;
+  background-color: #009328;
 }
 .login-form .form-check .form-check-label {
   color: #072720;
@@ -16985,7 +16985,7 @@ My Account Page
 .login-form .underline span {
   display: inline-block;
   padding: 0 35px;
-  background-color: #fffaeb;
+  background-color: #edf1ee;
   font-weight: 500;
 }
 .login-form .facebook {
@@ -17091,14 +17091,14 @@ Blog Details Page
   line-height: 30px;
   text-align: center;
   border-radius: 100%;
-  background-color: #9edd05;
+  background-color: #009328;
   margin-right: 10px;
 }
 .blog-details-content .share-tags .tag li a {
   color: #ffffff;
 }
 .blog-details-content .share-tags .tag li a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .blog-details-content .share-tags .share {
   text-align: end;
@@ -17122,7 +17122,7 @@ Blog Details Page
   color: #072720;
 }
 .blog-details-content .share-tags .share ul li a:hover {
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .blog-details-content .share-tags .share ul li:last-child {
   margin-right: 0;
@@ -17185,7 +17185,7 @@ Blog Details Page
   font-size: 14px;
 }
 .comment ul li a:hover {
-  background-color: #9edd05;
+  background-color: #009328;
 }
 .comment ul li:last-child {
   margin-right: 0;
@@ -17259,7 +17259,7 @@ Blog Details Page
   color: #072720;
 }
 .reply-form .form-control:focus {
-  border-color: #9edd05;
+  border-color: #009328;
 }
 .reply-form .textarea {
   min-height: 150px;
@@ -17296,7 +17296,7 @@ Contact Us Page
   line-height: 62px;
   text-align: center;
   border-radius: 100%;
-  background-color: #9edd05;
+  background-color: #009328;
   transform: translateY(-50%);
 }
 .location span {
@@ -17310,7 +17310,7 @@ Contact Us Page
   font-weight: 500;
 }
 .location a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .location:last-child::before {
   display: none;
@@ -17333,7 +17333,7 @@ Contact Us Page
   color: #072720;
 }
 .contact-form .form-control:focus {
-  border-color: #9edd05;
+  border-color: #009328;
 }
 .contact-form .textarea {
   min-height: 206px;
@@ -17515,10 +17515,10 @@ Product Details Page
   transition: all ease 0.5s;
 }
 .product-details-content .count-warp li .favorite:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .product-details-content .count-warp li .favorite:hover i {
-  color: #9edd05;
+  color: #009328;
 }
 
 .description-area .review-tab .review-description {
@@ -17596,7 +17596,7 @@ Product Details Page
   color: #ea0000;
 }
 .description-area .review-tab .jonathan-card .inappropriate a:hover {
-  color: #9edd05;
+  color: #009328;
 }
 .description-area .review-tab .nav-tabs {
   border-bottom: 1px solid rgba(8, 39, 32, 0.08);
@@ -17665,7 +17665,7 @@ Cart Page
   color: #082720;
   padding: 20px 25px 20px 25px;
   text-wrap: nowrap;
-  background-color: #fffaeb;
+  background-color: #edf1ee;
 }
 .cart-area .shopping-form .cart-wraps .cart-table .table thead tr th:first-child {
   text-align: start;
@@ -17875,7 +17875,7 @@ Checkout Page
   width: 17px;
   height: 17px;
   border: 1px solid #072720;
-  background-color: #fffaeb;
+  background-color: #edf1ee;
   border-radius: 50%;
 }
 .checkout-area .check-box .form-check .form-check-input:checked {
@@ -17941,7 +17941,7 @@ Checkout Page
   width: 17px;
   height: 17px;
   border: 1px solid #072720;
-  background-color: #fffaeb;
+  background-color: #edf1ee;
   border-radius: 50%;
 }
 .checkout-area .checkout-form .form-check .form-check-input:checked {
@@ -18074,7 +18074,7 @@ Go Top Button CSS
   cursor: pointer;
   top: 50%;
   right: 25px;
-  background-color: #9edd05;
+  background-color: #009328;
   color: #ffffff;
   width: 50px;
   height: 50px;
