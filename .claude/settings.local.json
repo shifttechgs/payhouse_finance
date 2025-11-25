@@ -7,7 +7,19 @@
       "Bash(docker-compose logs:*)",
       "WebFetch(domain:za.pinterest.com)",
       "Bash(mkdir:*)",
-      "Bash(cmd.exe /c \"php --ini\")"
+      "Bash(cmd.exe /c \"php --ini\")",
+      "Bash(php artisan:*)",
+      "Bash(cmd.exe /c \"php --version\")",
+      "Bash(cmd.exe /c \"php artisan make:migration add_file_uploads_to_loan_applications_table --table=loan_applications\")",
+      "Bash(cmd.exe:*)",
+      "Bash(/mnt/c/wamp64_3.3.4/bin/php/php8.3.10/php.exe artisan migrate:status:*)",
+      "Bash(/mnt/c/wamp64_3.3.4/bin/php/php8.3.14/php.exe artisan migrate:status:*)",
+      "Bash(/mnt/c/wamp64_3.3.4/bin/mysql/mysql8.3.0/bin/mysql.exe:*)",
+      "Bash(/mnt/c/wamp64_3.3.4/bin/mysql/mysql9.1.0/bin/mysql.exe:*)",
+      "Bash(/mnt/c/wamp64_3.3.4/bin/php/php8.3.14/php.exe:*)",
+      "Bash(/mnt/c/wamp64_3.3.4/www/projects/payhouse_finance/storage/logs/laravel.log)",
+      "Bash(cat:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

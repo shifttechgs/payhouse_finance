@@ -8,7 +8,7 @@
 
                             <a class="d-block navbar-brand logo-brand p-0" href="{{ url('/') }}">
                                 <img
-                                    src="{{ asset('assets/images/payhouse.png') }}"
+                                    src="{{ asset('assets/images/white_payhouse_logo.png') }}"
                                     alt="Payhouse Finance - Loans in Zimbabwe"
                                     class="payhouse-logo"
                                     loading="eager"

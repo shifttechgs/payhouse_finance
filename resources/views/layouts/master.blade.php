@@ -1,52 +1,74 @@
 <!DOCTYPE html>
-<html lang="en-ZW">
+<html lang="en-ZW" prefix="og: https://ogp.me/ns#">
 <head>
-    <!-- Meta Tags -->
+    <!-- CORE META TAGS -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#1a73e8">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-    <!-- Primary SEO Meta -->
+    <!-- Performance & Security -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="theme-color" content="#1a73e8" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d47a1" media="(prefers-color-scheme: dark)">
+
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+    <!-- Preload Assets -->
+    <link rel="preload" href="{{ asset('assets/css/style.css') }}" as="style">
+    <link rel="preload" href="{{ asset('assets/js/script.js') }}" as="script">
+
+    <!-- SEO META -->
     <title>@yield('title', 'Payhouse Finance - Quick Loans for Civil Servants, Pensioners & Salaried Workers in Zimbabwe')</title>
     <meta name="description" content="@yield('description', 'Get fast, affordable loans in Zimbabwe. Payhouse Finance serves Civil Servants, Government Pensions, Salaried Individuals, SMEs & Informal Traders in Harare, Marondera & Chinhoyi. Apply today!')">
-    <meta name="keywords" content="loans Zimbabwe, civil servant loans, pension loans Zimbabwe, salary loans Harare, quick loans Marondera, loans Chinhoyi, government employee loans, parastatal loans, SME loans Zimbabwe, informal trader finance, microfinance Zimbabwe, personal loans Harare, Payhouse Finance">
+    <meta name="keywords" content="@yield('keywords', 'loans Zimbabwe, civil servant loans, pension loans Zimbabwe, salary loans Harare, quick loans Marondera, loans Chinhoyi, government employee loans, parastatal loans, SME loans Zimbabwe, informal trader finance, microfinance Zimbabwe, personal loans Harare, Payhouse Finance, fast loan approval Zimbabwe, affordable interest rates, secured loans, unsecured loans Zimbabwe')">
     <meta name="author" content="Payhouse Finance">
+    <meta name="publisher" content="Payhouse Finance">
+    <meta name="copyright" content="Copyright © {{ date('Y') }} Payhouse Finance. All rights reserved.">
+    <meta name="robots" content="@yield('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')">
 
-    <!-- Geo-Targeting Meta Tags -->
-    <meta name="geo.region" content="ZW">
-    <meta name="geo.placename" content="Zimbabwe">
-    <meta name="geo.position" content="-17.8252;31.0335">
-    <meta name="ICBM" content="-17.8252, 31.0335">
-
-    <!-- Canonical URL -->
+    <!-- Canonical & Alternate -->
     <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="en-zw" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="x-default" href="{{ url('/') }}">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
+    <!-- Open Graph -->
+    <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('og_title', 'Payhouse Finance - Quick Loans for Civil Servants & Pensioners in Zimbabwe')">
     <meta property="og:description" content="@yield('og_description', 'Trusted loan provider for Civil Servants, Government Pensions, SMEs & Salaried Workers in Harare, Marondera & Chinhoyi. Fast approval, competitive rates.')">
-    <meta property="og:image" content="{{ asset('assets/images/social-preview.jpg') }}">
+    <meta property="og:image" content="@yield('og_image', asset('assets/images/social-preview.jpg'))">
+    <meta property="og:image:secure_url" content="@yield('og_image', asset('assets/images/social-preview.jpg'))">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Payhouse Finance - Trusted Loan Provider in Zimbabwe">
     <meta property="og:site_name" content="Payhouse Finance">
     <meta property="og:locale" content="en_ZW">
+    <meta property="fb:app_id" content="@yield('fb_app_id', '')">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@payhousefinance">
+    <meta name="twitter:creator" content="@payhousefinance">
     <meta name="twitter:title" content="@yield('twitter_title', 'Payhouse Finance - Quick Loans in Zimbabwe')">
     <meta name="twitter:description" content="@yield('twitter_description', 'Fast loans for Civil Servants, Pensioners, SMEs & Salaried Workers. Serving Harare, Marondera & Chinhoyi.')">
-    <meta name="twitter:image" content="{{ asset('assets/images/social-preview.jpg') }}">
-    <meta name="twitter:creator" content="@payhousefinance">
-    <meta name="twitter:site" content="@payhousefinance">
+    <meta name="twitter:image" content="@yield('twitter_image', asset('assets/images/social-preview.jpg'))">
+    <meta name="twitter:image:alt" content="Payhouse Finance Zimbabwe">
 
-    <!-- Favicon -->
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon-16x16.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#1a73e8">
 
-    <!-- Essential CSS Files -->
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/flaticon_finto.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/scrollCue.css') }}">
@@ -59,158 +81,75 @@
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
     />
-    <!-- Font Awesome -->
-{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">--}}
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        rel="stylesheet"
+        integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
 
-    <!-- Toastr CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
-
-{{--    <!-- Structured Data (JSON-LD) -->--}}
-{{--    <script type="application/ld+json">--}}
-{{--    @json([--}}
-{{--        '@context' => 'https://schema.org',--}}
-{{--        '@type' => 'FinancialService',--}}
-{{--        'name' => 'Payhouse Finance',--}}
-{{--        'image' => asset('assets/images/logo.png'),--}}
-{{--        'logo' => asset('assets/images/logo.png'),--}}
-{{--        '@id' => url('/'),--}}
-{{--        'url' => url('/'),--}}
-{{--        'telephone' => '+263-XXX-XXXX',--}}
-{{--        'priceRange' => '$$',--}}
-{{--        'address' => [--}}
-{{--            '@type' => 'PostalAddress',--}}
-{{--            'streetAddress' => 'Your Street Address',--}}
-{{--            'addressLocality' => 'Harare',--}}
-{{--            'addressRegion' => 'Harare Province',--}}
-{{--            'postalCode' => '00000',--}}
-{{--            'addressCountry' => 'ZW'--}}
-{{--        ],--}}
-{{--        'geo' => [--}}
-{{--            '@type' => 'GeoCoordinates',--}}
-{{--            'latitude' => -17.8252,--}}
-{{--            'longitude' => 31.0335--}}
-{{--        ],--}}
-{{--        'areaServed' => [--}}
-{{--            [--}}
-{{--                '@type' => 'City',--}}
-{{--                'name' => 'Harare',--}}
-{{--                'address' => [--}}
-{{--                    '@type' => 'PostalAddress',--}}
-{{--                    'addressCountry' => 'ZW'--}}
-{{--                ]--}}
-{{--            ],--}}
-{{--            [--}}
-{{--                '@type' => 'City',--}}
-{{--                'name' => 'Marondera',--}}
-{{--                'address' => [--}}
-{{--                    '@type' => 'PostalAddress',--}}
-{{--                    'addressCountry' => 'ZW'--}}
-{{--                ]--}}
-{{--            ],--}}
-{{--            [--}}
-{{--                '@type' => 'City',--}}
-{{--                'name' => 'Chinhoyi',--}}
-{{--                'address' => [--}}
-{{--                    '@type' => 'PostalAddress',--}}
-{{--                    'addressCountry' => 'ZW'--}}
-{{--                ]--}}
-{{--            ]--}}
-{{--        ],--}}
-{{--        'description' => 'Payhouse Finance provides quick and affordable loans to Civil Servants, Government Pensioners, Salaried Individuals, SMEs, Informal Traders, and Selected Parastatal Employees in Zimbabwe.',--}}
-{{--        'serviceType' => ['Personal Loans', 'Pension Loans', 'Civil Servant Loans', 'SME Financing', 'Microfinance'],--}}
-{{--        'knowsAbout' => ['Personal Loans', 'Government Pension Loans', 'Civil Service Loans', 'Parastatal Employee Loans', 'SME Financing', 'Informal Trader Loans'],--}}
-{{--        'sameAs' => [--}}
-{{--            'https://www.facebook.com/payhousefinance',--}}
-{{--            'https://twitter.com/payhousefinance',--}}
-{{--            'https://www.linkedin.com/company/payhousefinance'--}}
-{{--        ]--}}
-{{--    ])--}}
-{{--    </script>--}}
-
-{{--    <script type="application/ld+json">--}}
-{{--    @json([--}}
-{{--        '@context' => 'https://schema.org',--}}
-{{--        '@type' => 'Organization',--}}
-{{--        'name' => 'Payhouse Finance',--}}
-{{--        'url' => url('/'),--}}
-{{--        'logo' => asset('assets/images/logo.png'),--}}
-{{--        'contactPoint' => [--}}
-{{--            '@type' => 'ContactPoint',--}}
-{{--            'telephone' => '+263-XXX-XXXX',--}}
-{{--            'contactType' => 'Customer Service',--}}
-{{--            'areaServed' => 'ZW',--}}
-{{--            'availableLanguage' => ['English', 'Shona', 'Ndebele']--}}
-{{--        ],--}}
-{{--        'address' => [--}}
-{{--            '@type' => 'PostalAddress',--}}
-{{--            'addressLocality' => 'Harare',--}}
-{{--            'addressCountry' => 'ZW'--}}
-{{--        ]--}}
-{{--    ])--}}
-{{--    </script>--}}
-
-{{--    <script type="application/ld+json">--}}
-{{--    @json([--}}
-{{--        '@context' => 'https://schema.org',--}}
-{{--        '@type' => 'WebSite',--}}
-{{--        'name' => 'Payhouse Finance',--}}
-{{--        'url' => url('/'),--}}
-{{--        'potentialAction' => [--}}
-{{--            '@type' => 'SearchAction',--}}
-{{--            'target' => [--}}
-{{--                '@type' => 'EntryPoint',--}}
-{{--                'urlTemplate' => url('/') . '/search?q={search_term_string}'--}}
-{{--            ],--}}
-{{--            'query-input' => 'required name=search_term_string'--}}
-{{--        ]--}}
-{{--    ])--}}
-{{--    </script>--}}
-
+    @stack('head-scripts')
 </head>
 <body>
-@include("partials.header")
+@include('partials.header')
+
 @yield('content')
-@include("partials.footer")
-<!-- JS Files -->
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/fslightbox.min.js"></script>
-<script src="assets/js/smooth-scroll.js"></script>
-<script src="assets/js/scrollCue.min.js"></script>
-<script src="assets/js/script.js"></script>
 
+@include('partials.footer')
 
-<!-- Toastr JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- JS -->
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/swiper-bundle.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/fslightbox.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/smooth-scroll.js') }}" defer></script>
+<script src="{{ asset('assets/js/scrollCue.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/script.js') }}" defer></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+    integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer
+></script>
 
-<!-- Toastr Flash Message -->
+<!-- Toastr Session Flash -->
 <script>
-    @if (session('success'))
-    toastr.success("{{ session('success') }}");
-    @elseif (session('error'))
-    toastr.error("{{ session('error') }}");
-    @elseif (session('warning'))
-    toastr.warning("{{ session('warning') }}");
-    @elseif (session('info'))
-    toastr.info("{{ session('info') }}");
-    @endif
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof toastr !== 'undefined') {
+            @if (session('success'))
+            toastr.success("{{ session('success') }}");
+            @elseif (session('error'))
+            toastr.error("{{ session('error') }}");
+            @elseif (session('warning'))
+            toastr.warning("{{ session('warning') }}");
+            @elseif (session('info'))
+            toastr.info("{{ session('info') }}");
+            @endif
+        }
+    });
 </script>
 
-
+<!-- Smooth Scroll -->
 <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            if (window.location.pathname === "/") {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            }
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         });
     });
-
 </script>
 
-<!-- Hero Loan Calculator Script -->
+<!-- Loan Calculator -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const loanSlider = document.getElementById('loanAmount');
@@ -218,33 +157,23 @@
         const repaymentInfo = document.getElementById('repaymentInfo');
 
         if (loanSlider && amountDisplay && repaymentInfo) {
-            // Function to update calculator display
-            function updateCalculator() {
+            const updateCalculator = () => {
                 const amount = parseInt(loanSlider.value);
-
-                // Format the amount with commas
                 const formattedAmount = '$' + amount.toLocaleString();
                 amountDisplay.textContent = formattedAmount;
 
-                // Calculate approximate monthly repayment (12 months at 15% annual interest)
                 const monthlyRate = 0.15 / 12;
                 const months = 12;
                 const monthlyPayment = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) /
-                                      (Math.pow(1 + monthlyRate, months) - 1);
+                    (Math.pow(1 + monthlyRate, months) - 1);
+                repaymentInfo.textContent = 'Repay as low as $' + Math.round(monthlyPayment).toLocaleString() + '/month';
+            };
 
-                const formattedPayment = '$' + Math.round(monthlyPayment).toLocaleString();
-                repaymentInfo.textContent = 'Repay as low as ' + formattedPayment + '/month';
-            }
-
-            // Update on slider input
             loanSlider.addEventListener('input', updateCalculator);
-
-            // Initial update on page load
             updateCalculator();
         }
     });
 </script>
+
 </body>
-
 </html>
-

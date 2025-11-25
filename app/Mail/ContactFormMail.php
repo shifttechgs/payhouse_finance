@@ -29,11 +29,11 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
-       // dd(view()->exists('mail.contact_form')); // Replace with your view name
+        $customerName = $this->data['fullname'] ?? 'Customer';
+        $loanType = $this->data['loanType'] ?? 'Loan';
 
-        return $this->markdown('mail.contact_form')
+        return $this->view('emails.contact-inquiry')
             ->with('data', $this->data)
-            ->subject('New Contact Form Submission');
-
+            ->subject("🔔 New {$loanType} Inquiry from {$customerName} - Action Required");
     }
 }

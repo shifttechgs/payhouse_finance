@@ -19,7 +19,7 @@
     <!-- End Page Banner Area -->
 
     <!-- Start Contact Form & Info Area -->
-    <div class="contact-form-area pt-100 pb-50">
+    <div class="contact-form-area pt-80 pb-50">
         <div class="container">
             <div class="section-title text-center mb-5" data-cues="slideInUp" data-duration="800">
                 <span style="color: white" class="sub-title two bg-color-009328 rounded-pill">GET IN TOUCH</span>
@@ -152,8 +152,13 @@
 
                             <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
                                 <p class="mb-0 text-muted"><small>Fields marked with <span class="text-danger">*</span> are required</small></p>
-                                <button type="submit" class="default-btn">
-                                    Send Message <i class="ri-arrow-right-up-line"></i>
+                                <button type="submit" class="default-btn" id="contactSubmitBtn">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                        Sending...
+                                    </span>
+                                    <i class="ri-arrow-right-up-line btn-icon"></i>
                                 </button>
                             </div>
                         </form>
@@ -288,3 +293,25 @@
 {{--    <!-- End Contact Address Area -->--}}
 
 @endsection
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('form[action="{{ url('/contact') }}"]');
+    const submitBtn = document.getElementById('contactSubmitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    const btnIcon = submitBtn.querySelector('.btn-icon');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnIcon.style.display = 'none';
+            btnLoading.style.display = 'inline-block';
+        });
+    }
+});
+</script>
+@endpush

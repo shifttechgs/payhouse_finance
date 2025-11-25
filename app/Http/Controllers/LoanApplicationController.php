@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreLoanApplicationRequest;
+use App\Mail\LoanApplicationMail;
 use App\Models\LoanApplication;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf;
-use Illuminate\Support\Facades\Log; // Add this import statement
-
+use Illuminate\Support\Facades\Log;
 
 class LoanApplicationController extends Controller
 {
@@ -23,135 +26,247 @@ class LoanApplicationController extends Controller
     /**
      * Store a newly created loan application.
      */
-    public function store(Request $request)
+    public function store(StoreLoanApplicationRequest $request)
     {
-        // Log the incoming request data for debugging
-        //Log::info('Loan Application Submitted:', $request->all());
+        // Debug logging
+        Log::info('Loan application submission started', [
+            'has_files' => [
+                'payslip' => $request->hasFile('payslip'),
+                'id_document' => $request->hasFile('id_document'),
+                'bank_statement' => $request->hasFile('bank_statement'),
+            ],
+            'request_method' => $request->method(),
+            'content_type' => $request->header('Content-Type'),
+        ]);
 
         try {
-            // Validate the request
-            $validated = $request->validate([
-            // Personal Details
-            'first_name' => 'required|string|max:255',
-            'middle_name' => 'nullable|string|max:255',
-            'surname' => 'required|string|max:255',
-            'residential_address' => 'required|string|max:1000',
-            'national_id' => 'required|string|max:50',
-            'date_of_birth' => 'required|date|before:today',
-            'mobile_no' => 'required|string|max:20',
-            'email_address' => 'required|email|max:255',
-            'sex' => 'required|in:male,female',
-            'marital_status' => 'required|in:single,married,separated',
-            'dependents_children' => 'required|integer|min:0',
-            'dependents_others' => 'required|integer|min:0',
+            // Get validated data
+            $applicationData = $request->validated();
 
-            // Employment Details
-            'occupation' => 'required|in:employed,self-employed',
-            'employer_business' => 'nullable|string|max:255',
-            'employer_address' => 'nullable|string|max:1000',
-            'designation_department' => 'nullable|string|max:255',
-            'years_in_occupation' => 'nullable|integer|min:0|max:100',
-            'office_phone' => 'nullable|string|max:20',
-            'monthly_salary_income' => 'required|numeric|min:0',
-            'other_income' => 'nullable|numeric|min:0',
-            'accommodation_status' => 'required|in:owned,rented,parents',
+            // Generate unique reference ID
+            $referenceId = $this->generateReferenceId();
 
-            // Loan Details
-            'loan_amount' => 'required|numeric|min:1',
-            'loan_period_months' => 'required|integer|min:1|max:60',
-            'loan_purpose' => 'required|string|max:1000',
+            // Add metadata
+            $applicationData['reference_id'] = $referenceId;
+            $applicationData['ip_address'] = $request->ip();
+            $applicationData['status'] = 'pending';
 
-            // Banking Details
-            'bank_name' => 'required|string|max:255',
-            'bank_branch' => 'required|string|max:255',
-            'account_number' => 'required|string|max:50',
+            // Use database transaction for data integrity
+            $loanApplication = DB::transaction(function () use ($request, $applicationData, $referenceId) {
+                // Create the loan application record in database
+                $loanApplication = LoanApplication::create($applicationData);
 
-            // Next of Kin 1
-            'kin1_name' => 'required|string|max:255',
-            'kin1_relationship' => 'required|string|max:100',
-            'kin1_contact' => 'required|string|max:20',
-            'kin1_address' => 'required|string|max:1000',
+                Log::info('Loan application saved to database', [
+                    'id' => $loanApplication->id,
+                    'reference_id' => $referenceId
+                ]);
 
-            // Next of Kin 2
-            'kin2_name' => 'required|string|max:255',
-            'kin2_relationship' => 'required|string|max:100',
-            'kin2_contact' => 'required|string|max:20',
-            'kin2_address' => 'required|string|max:1000',
-            ]);
+                // Handle file uploads and store permanently
+                $uploadedFiles = $this->handleFileUploads($request, $referenceId);
 
-            // Add IP address
-            $validated['ip_address'] = $request->ip();
+                // Update loan application with file paths
+                if (!empty($uploadedFiles)) {
+                    $loanApplication->update([
+                        'payslip_path' => $uploadedFiles['payslip']['permanent_path'] ?? null,
+                        'id_document_path' => $uploadedFiles['id_document']['permanent_path'] ?? null,
+                        'bank_statement_path' => $uploadedFiles['bank_statement']['permanent_path'] ?? null,
+                    ]);
+                }
 
-            // Create the loan application
-            $application = LoanApplication::create($validated);
+                return ['application' => $loanApplication, 'files' => $uploadedFiles];
+            });
 
-            // Generate PDF
-            $pdfPath = $this->generatePDF($application);
-            $application->update(['pdf_path' => $pdfPath]);
-
-            // Send email to admin
-            $this->sendAdminNotification($application);
+            // Send email notification (outside transaction so DB save is not dependent on email)
+            try {
+                $this->sendAdminNotification(
+                    array_merge($applicationData, ['submitted_at' => now()]),
+                    $loanApplication['files']
+                );
+            } catch (\Exception $emailException) {
+                // Log email failure but don't fail the application submission
+                Log::error('Email notification failed but application saved', [
+                    'reference_id' => $referenceId,
+                    'error' => $emailException->getMessage()
+                ]);
+            }
 
             return response()->json([
                 'success' => true,
                 'message' => 'Your loan application has been submitted successfully. We will contact you shortly.',
-                'application_id' => $application->id,
+                'reference_id' => $referenceId,
             ], 201);
 
         } catch (\Illuminate\Validation\ValidationException $e) {
+            Log::error('Loan application validation failed', [
+                'errors' => $e->errors(),
+                'ip' => $request->ip()
+            ]);
             return response()->json([
                 'success' => false,
                 'message' => 'Validation failed',
                 'errors' => $e->errors()
             ], 422);
         } catch (\Exception $e) {
-            \Log::error('Loan Application Error: ' . $e->getMessage());
+            Log::error('Loan Application Error: ' . $e->getMessage(), [
+                'trace' => $e->getTraceAsString(),
+                'ip' => $request->ip()
+            ]);
             return response()->json([
                 'success' => false,
                 'message' => 'An error occurred while processing your application. Please try again.',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
 
     /**
-     * Generate PDF for the loan application.
+     * Generate a unique reference ID for the application.
      */
-    protected function generatePDF(LoanApplication $application): string
+    protected function generateReferenceId(): string
     {
-        // Generate PDF
-        $pdf = Pdf::loadView('loan-application.pdf', compact('application'));
-
-        // Create filename
-        $filename = 'loan-application-' . $application->id . '-' . time() . '.pdf';
-        $path = 'loan-applications/' . $filename;
-
-        // Save PDF to storage
-        Storage::disk('public')->put($path, $pdf->output());
-
-        return $path;
+        return 'LA-' . date('Ymd') . '-' . strtoupper(Str::random(8));
     }
 
     /**
-     * Send email notification to admin.
+     * Handle secure file uploads and store permanently.
+     *
+     * @param StoreLoanApplicationRequest $request
+     * @param string $referenceId
+     * @return array
      */
-    protected function sendAdminNotification(LoanApplication $application): void
+    protected function handleFileUploads(StoreLoanApplicationRequest $request, string $referenceId): array
+    {
+        $uploadedFiles = [];
+        $fileFields = ['payslip', 'id_document', 'bank_statement'];
+
+        // Create permanent storage directory for this application
+        $permanentDir = "loan-applications/{$referenceId}";
+
+        foreach ($fileFields as $fieldName) {
+            if ($request->hasFile($fieldName)) {
+                $file = $request->file($fieldName);
+
+                // Additional security checks
+                if (!$this->isValidPDF($file)) {
+                    throw new \Exception("Invalid file format for {$fieldName}. Only PDF files are allowed.");
+                }
+
+                // Generate secure filename with field name for clarity
+                $extension = $file->getClientOriginalExtension();
+                $filename = $fieldName . '-' . $referenceId . '.' . $extension;
+
+                // Store file permanently in the application's folder
+                $permanentPath = $file->storeAs(
+                    $permanentDir,
+                    $filename,
+                    'local'
+                );
+
+                $uploadedFiles[$fieldName] = [
+                    'path' => $permanentPath,
+                    'permanent_path' => $permanentPath,
+                    'real_path' => Storage::disk('local')->path($permanentPath),
+                    'original_name' => $file->getClientOriginalName(),
+                    'size' => $file->getSize()
+                ];
+
+                Log::info("File uploaded permanently: {$fieldName}", [
+                    'path' => $permanentPath,
+                    'reference_id' => $referenceId,
+                    'original_name' => $file->getClientOriginalName(),
+                    'size' => $file->getSize()
+                ]);
+            }
+        }
+
+        return $uploadedFiles;
+    }
+
+    /**
+     * Validate if file is a legitimate PDF.
+     *
+     * @param \Illuminate\Http\UploadedFile $file
+     * @return bool
+     */
+    protected function isValidPDF($file): bool
+    {
+        // Check MIME type
+        $mimeType = $file->getMimeType();
+        if (!in_array($mimeType, ['application/pdf', 'application/x-pdf'])) {
+            return false;
+        }
+
+        // Check file signature (magic bytes) - PDF files start with %PDF
+        $handle = fopen($file->getRealPath(), 'r');
+        $header = fread($handle, 4);
+        fclose($handle);
+
+        return strpos($header, '%PDF') === 0;
+    }
+
+    /**
+     * Generate PDF for the loan application and store permanently.
+     */
+    protected function generatePDF(array $applicationData): array
+    {
+        // Generate PDF from application data
+        $pdf = Pdf::loadView('loan-application.pdf', ['application' => $applicationData]);
+
+        // Create filename with reference ID
+        $referenceId = $applicationData['reference_id'];
+        $filename = 'loan-application-' . $referenceId . '.pdf';
+
+        // Store PDF permanently in the application's folder
+        $permanentDir = "loan-applications/{$referenceId}";
+        $pdfPath = $permanentDir . '/' . $filename;
+
+        // Save PDF to permanent storage
+        Storage::disk('local')->put($pdfPath, $pdf->output());
+
+        // Update database with PDF path
+        LoanApplication::where('reference_id', $referenceId)->update(['pdf_path' => $pdfPath]);
+
+        Log::info('Application PDF generated and saved', [
+            'reference_id' => $referenceId,
+            'pdf_path' => $pdfPath
+        ]);
+
+        return [
+            'path' => $pdfPath,
+            'real_path' => Storage::disk('local')->path($pdfPath)
+        ];
+    }
+
+    /**
+     * Send email notification to admin with all attachments.
+     */
+    protected function sendAdminNotification(array $applicationData, array $uploadedFiles): void
     {
         try {
             $adminEmail = env('ADMIN_EMAIL', 'sales@shifttechgs.com');
-            $pdfPath = Storage::disk('public')->path($application->pdf_path);
 
-            Mail::send('emails.loan-application', compact('application'), function ($message) use ($adminEmail, $pdfPath, $application) {
-                $message->to($adminEmail)
-                    ->subject('New Loan Application - ' . $application->full_name)
-                    ->attach($pdfPath, [
-                        'as' => 'loan-application-' . $application->id . '.pdf',
-                        'mime' => 'application/pdf',
-                    ]);
-            });
+            // Generate application summary PDF (stored permanently)
+            $pdfData = $this->generatePDF($applicationData);
+
+            // Use Mailable class for sending email
+            Mail::to($adminEmail)->send(
+                new LoanApplicationMail($applicationData, $pdfData['real_path'], $uploadedFiles)
+            );
+
+            Log::info('Loan application email sent successfully', [
+                'reference_id' => $applicationData['reference_id'],
+                'admin_email' => $adminEmail,
+                'attachments_count' => count($uploadedFiles) + 1
+            ]);
+
+            // Files are now stored permanently - no cleanup needed
+
         } catch (\Exception $e) {
-            // Log the error but don't fail the application
-            \Log::error('Failed to send loan application email: ' . $e->getMessage());
+            // Log the error and re-throw to handle in main try-catch
+            Log::error('Failed to send loan application email: ' . $e->getMessage(), [
+                'reference_id' => $applicationData['reference_id'] ?? 'unknown',
+                'trace' => $e->getTraceAsString()
+            ]);
+            throw $e;
         }
     }
 

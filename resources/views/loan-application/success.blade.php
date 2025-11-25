@@ -189,14 +189,14 @@
                 <i class="ri-time-line"></i>
                 <span>Our team will review your application within 24-48 hours.</span>
             </div>
-            <div class="detail-item">
-                <i class="ri-phone-line"></i>
-                <span>We will contact you via phone or email for any additional information needed.</span>
-            </div>
-            <div class="detail-item">
-                <i class="ri-check-double-line"></i>
-                <span>Once approved, your loan will be disbursed to your provided bank account.</span>
-            </div>
+{{--            <div class="detail-item">--}}
+{{--                <i class="ri-phone-line"></i>--}}
+{{--                <span>We will contact you via phone or email for any additional information needed.</span>--}}
+{{--            </div>--}}
+{{--            <div class="detail-item">--}}
+{{--                <i class="ri-check-double-line"></i>--}}
+{{--                <span>Once approved, your loan will be disbursed to your provided bank account.</span>--}}
+{{--            </div>--}}
         </div>
 
         <a href="{{ url('/') }}" class="btn-home">

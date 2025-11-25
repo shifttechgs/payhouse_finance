@@ -45,7 +45,7 @@
 {{--                                <i class="ri-award-line"></i>--}}
 {{--                                <span>5+ Years<br>Trusted</span>--}}
 {{--                            </div>--}}
-                            <img class="" src="assets/images/hero/social_proof.png" style="border-radius: 20px" alt="image">
+                            <img class="hero-image-mobile-hide" src="assets/images/hero/social_proof.png" style="border-radius: 20px" alt="Payhouse Finance Trust Badges">
                         </div>
                     </div>
                 </div>

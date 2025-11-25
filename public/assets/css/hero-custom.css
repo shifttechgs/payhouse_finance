@@ -48,7 +48,7 @@
 
 /* Hero Row Padding */
 .hero-row-padding {
-    padding-top: 20px;
+    padding-top: 60px;
     padding-bottom: 20px;
 }
 
@@ -482,6 +482,16 @@
     .trust-badge i {
         font-size: 35px;
         margin-bottom: 10px;
+    }
+
+    /* Hide hero image on mobile devices */
+    .hero-image-mobile-hide {
+        display: none !important;
+    }
+
+    /* Hide entire hero visual column on mobile for cleaner layout */
+    .hero-visual-column {
+        display: none;
     }
 }
 

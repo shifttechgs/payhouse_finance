@@ -201,6 +201,30 @@
         display: block;
     }
 
+    /* File Upload Styles */
+    input[type="file"].form-control {
+        padding: 12px 15px;
+        border: 2px dashed #dee2e6;
+        background: #f8f9fa;
+        cursor: pointer;
+    }
+
+    input[type="file"].form-control:hover {
+        border-color: #009328;
+        background: #f0fff4;
+    }
+
+    input[type="file"].form-control:focus {
+        border-color: #009328;
+        background: #ffffff;
+        border-style: solid;
+    }
+
+    input[type="file"].form-control.error {
+        border-color: #dc3545;
+        border-style: solid;
+    }
+
     /* Radio and Checkbox Groups */
     .radio-group, .checkbox-group {
         display: flex;
@@ -613,7 +637,7 @@
         <div class="page-banner-content">
             <h1>Loan Application Form</h1>
             <ul>
-                <li>Complete your loan application in 4 simple steps</li>
+                <li>Complete your loan application in 5 simple steps</li>
             </ul>
         </div>
     </div>
@@ -654,10 +678,14 @@
                     <div class="step-circle">4</div>
                     <span class="step-label">Next of Kin</span>
                 </div>
+                <div class="step" data-step="5">
+                    <div class="step-circle">5</div>
+                    <span class="step-label">Documents</span>
+                </div>
             </div>
 
             <!-- Form -->
-            <form id="loanApplicationForm" class="form-content">
+            <form id="loanApplicationForm" class="form-content" enctype="multipart/form-data">
                 @csrf
 
                 <!-- Step 1: Personal Details -->
@@ -696,7 +724,10 @@
                         <div class="form-group">
                             <label class="form-label">Date of Birth <span class="required">*</span></label>
                             <input type="date" name="date_of_birth" class="form-control" required>
-                            <div class="error-message">Date of birth is required</div>
+                            <small style="color: #6c757d; font-size: 13px; display: block; margin-top: 5px;">
+                                <i class="ri-information-line"></i> You must be at least 18 years old
+                            </small>
+                            <div class="error-message">You must be at least 18 years old to apply</div>
                         </div>
                     </div>
 
@@ -1003,6 +1034,59 @@
                         <button type="button" class="btn-nav btn-prev">
                             <i class="ri-arrow-left-line"></i> Previous
                         </button>
+                        <button type="button" class="btn-nav btn-next">
+                            Next <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Document Upload -->
+                <div class="form-step" data-step="5">
+                    <h2 class="form-section-title">Required Documents</h2>
+
+                    <div class="info-box">
+                        <i class="ri-file-upload-line"></i>
+                        <p>Please upload the following documents in PDF format (max 5MB each). All documents are required for processing your loan application.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Payslip (Latest 3 months) <span class="required">*</span></label>
+                        <input type="file" name="payslip" class="form-control" accept=".pdf,application/pdf" required>
+                        <small style="color: #6c757d; font-size: 13px; display: block; margin-top: 5px;">
+                            <i class="ri-information-line"></i> Upload your latest payslip in PDF format (max 5MB)
+                        </small>
+                        <div class="error-message">Payslip is required (PDF only, max 5MB)</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">ID Document (National ID or Passport) <span class="required">*</span></label>
+                        <input type="file" name="id_document" class="form-control" accept=".pdf,application/pdf" required>
+                        <small style="color: #6c757d; font-size: 13px; display: block; margin-top: 5px;">
+                            <i class="ri-information-line"></i> Upload a clear copy of your ID document in PDF format (max 5MB)
+                        </small>
+                        <div class="error-message">ID document is required (PDF only, max 5MB)</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Bank Statement (Latest 3 months) <span class="required">*</span></label>
+                        <input type="file" name="bank_statement" class="form-control" accept=".pdf,application/pdf" required>
+                        <small style="color: #6c757d; font-size: 13px; display: block; margin-top: 5px;">
+                            <i class="ri-information-line"></i> Upload your latest bank statement in PDF format (max 5MB)
+                        </small>
+                        <div class="error-message">Bank statement is required (PDF only, max 5MB)</div>
+                    </div>
+
+                    <div class="info-box" style="margin-top: 30px; background: #d1ecf1; border-color: #bee5eb;">
+                        <i class="ri-shield-check-line" style="color: #0c5460;"></i>
+                        <p style="color: #0c5460;">
+                            <strong>Data Security:</strong> Your documents are encrypted and stored securely. They will only be used for loan assessment purposes.
+                        </p>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn-nav btn-prev">
+                            <i class="ri-arrow-left-line"></i> Previous
+                        </button>
                         <button type="submit" class="btn-nav btn-submit">
                             <span class="btn-text">Submit Application</span>
                             <div class="spinner"></div>
@@ -1040,10 +1124,6 @@
             <div class="modal-detail-item">
                 <i class="ri-phone-line"></i>
                 <span>We will contact you via phone or email for any additional information needed.</span>
-            </div>
-            <div class="modal-detail-item">
-                <i class="ri-check-double-line"></i>
-                <span>Once approved, your loan will be disbursed to your provided bank account.</span>
             </div>
         </div>
 
@@ -1112,7 +1192,45 @@ document.addEventListener('DOMContentLoaded', function() {
         let valid = true;
 
         requiredFields.forEach(field => {
-            if (!field.value.trim()) {
+            // File input validation
+            if (field.type === 'file') {
+                if (!field.files || field.files.length === 0) {
+                    field.classList.add('error');
+                    valid = false;
+                    return;
+                }
+
+                const file = field.files[0];
+                const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+
+                // Check file size
+                if (file.size > maxSize) {
+                    field.classList.add('error');
+                    valid = false;
+                    if (typeof toastr !== 'undefined') {
+                        toastr.error(`File ${file.name} is too large. Maximum size is 5MB.`, 'File Too Large');
+                    } else {
+                        alert(`File ${file.name} is too large. Maximum size is 5MB.`);
+                    }
+                    return;
+                }
+
+                // Check file type
+                if (file.type !== 'application/pdf') {
+                    field.classList.add('error');
+                    valid = false;
+                    if (typeof toastr !== 'undefined') {
+                        toastr.error(`File ${file.name} must be a PDF file.`, 'Invalid File Type');
+                    } else {
+                        alert(`File ${file.name} must be a PDF file.`);
+                    }
+                    return;
+                }
+
+                field.classList.remove('error');
+            }
+            // Text input validation
+            else if (!field.value.trim()) {
                 field.classList.add('error');
                 valid = false;
             } else {
@@ -1126,6 +1244,59 @@ document.addEventListener('DOMContentLoaded', function() {
                     field.classList.add('error');
                     valid = false;
                 }
+            }
+
+            // Date of birth validation (must be 18+ years old)
+            if (field.name === 'date_of_birth' && field.value) {
+                const dob = new Date(field.value);
+                const today = new Date();
+                const age = today.getFullYear() - dob.getFullYear();
+                const monthDiff = today.getMonth() - dob.getMonth();
+                const dayDiff = today.getDate() - dob.getDate();
+
+                // Calculate exact age
+                let exactAge = age;
+                if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                    exactAge--;
+                }
+
+                // Check if future date
+                if (dob > today) {
+                    field.classList.add('error');
+                    valid = false;
+                    if (typeof toastr !== 'undefined') {
+                        toastr.error('Date of birth cannot be in the future.', 'Invalid Date');
+                    } else {
+                        alert('Date of birth cannot be in the future.');
+                    }
+                    return;
+                }
+
+                // Check if under 18
+                if (exactAge < 18) {
+                    field.classList.add('error');
+                    valid = false;
+                    if (typeof toastr !== 'undefined') {
+                        toastr.error('You must be at least 18 years old to apply for a loan.', 'Age Requirement');
+                    } else {
+                        alert('You must be at least 18 years old to apply for a loan.');
+                    }
+                    return;
+                }
+
+                // Check if unreasonably old (over 100)
+                if (exactAge > 100) {
+                    field.classList.add('error');
+                    valid = false;
+                    if (typeof toastr !== 'undefined') {
+                        toastr.error('Please enter a valid date of birth.', 'Invalid Date');
+                    } else {
+                        alert('Please enter a valid date of birth.');
+                    }
+                    return;
+                }
+
+                field.classList.remove('error');
             }
         });
 
@@ -1145,7 +1316,69 @@ document.addEventListener('DOMContentLoaded', function() {
         field.addEventListener('input', function() {
             this.classList.remove('error');
         });
+        field.addEventListener('change', function() {
+            this.classList.remove('error');
+        });
     });
+
+    // Real-time date of birth validation
+    const dobField = document.querySelector('[name="date_of_birth"]');
+    if (dobField) {
+        dobField.addEventListener('change', function() {
+            if (!this.value) return;
+
+            const dob = new Date(this.value);
+            const today = new Date();
+            const age = today.getFullYear() - dob.getFullYear();
+            const monthDiff = today.getMonth() - dob.getMonth();
+            const dayDiff = today.getDate() - dob.getDate();
+
+            // Calculate exact age
+            let exactAge = age;
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                exactAge--;
+            }
+
+            // Clear previous errors
+            this.classList.remove('error');
+
+            // Check if future date
+            if (dob > today) {
+                this.classList.add('error');
+                if (typeof toastr !== 'undefined') {
+                    toastr.error('Date of birth cannot be in the future.', 'Invalid Date');
+                } else {
+                    alert('Date of birth cannot be in the future.');
+                }
+                this.value = '';
+                return;
+            }
+
+            // Check if under 18
+            if (exactAge < 18) {
+                this.classList.add('error');
+                if (typeof toastr !== 'undefined') {
+                    toastr.error('You must be at least 18 years old to apply for a loan.', 'Age Requirement');
+                } else {
+                    alert('You must be at least 18 years old to apply for a loan.');
+                }
+                this.value = '';
+                return;
+            }
+
+            // Check if unreasonably old (over 100)
+            if (exactAge > 100) {
+                this.classList.add('error');
+                if (typeof toastr !== 'undefined') {
+                    toastr.error('Please enter a valid date of birth.', 'Invalid Date');
+                } else {
+                    alert('Please enter a valid date of birth.');
+                }
+                this.value = '';
+                return;
+            }
+        });
+    }
 
     // Form submission
     form.addEventListener('submit', async function(e) {
@@ -1161,21 +1394,25 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.querySelector('.btn-text').textContent = 'Submitting...';
 
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
 
-        // Log the data being submitted
-        console.log('Submitting loan application:', data);
+        // Log the data being submitted (excluding files for brevity)
+        console.log('Submitting loan application with files...');
+        console.log('Form has files:', {
+            payslip: form.querySelector('[name="payslip"]').files.length > 0,
+            id_document: form.querySelector('[name="id_document"]').files.length > 0,
+            bank_statement: form.querySelector('[name="bank_statement"]').files.length > 0
+        });
 
         try {
             const response = await fetch('{{ route('loan.submit') }}', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Accept': 'application/json',
                     'X-CSRF-TOKEN': document.querySelector('[name="_token"]').value,
                     'X-Requested-With': 'XMLHttpRequest'
+                    // Note: Do NOT set Content-Type - browser will set it automatically with multipart/form-data boundary
                 },
-                body: JSON.stringify(data)
+                body: formData
             });
 
             // Log response for debugging
@@ -1216,9 +1453,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = 'hidden';
             } else {
                 // Handle validation errors
+                console.error('Server returned error:', result);
                 if (result.errors) {
-                    const errorMessages = Object.values(result.errors).flat().join('\n');
-                    throw new Error(errorMessages);
+                    const errorMessages = Object.entries(result.errors)
+                        .map(([field, messages]) => `${field}: ${messages.join(', ')}`)
+                        .join('\n');
+                    throw new Error('Validation errors:\n' + errorMessages);
                 }
                 throw new Error(result.message || 'An error occurred');
             }

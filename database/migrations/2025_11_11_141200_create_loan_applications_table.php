@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('loan_applications', function (Blueprint $table) {
             $table->id();
 
+            // Reference ID (unique identifier for tracking)
+            $table->string('reference_id')->unique();
+
             // Personal Details
             $table->string('first_name');
             $table->string('middle_name')->nullable();

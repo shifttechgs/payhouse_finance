@@ -15,6 +15,9 @@ class LoanApplication extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        // Reference ID
+        'reference_id',
+
         // Personal Details
         'first_name',
         'middle_name',
@@ -66,6 +69,12 @@ class LoanApplication extends Model
         'status',
         'admin_notes',
         'pdf_path',
+
+        // File Uploads
+        'payslip_path',
+        'id_document_path',
+        'bank_statement_path',
+
         'ip_address',
     ];
 

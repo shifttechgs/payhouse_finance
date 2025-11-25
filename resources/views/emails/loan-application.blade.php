@@ -103,7 +103,7 @@
         <!-- Header -->
         <div class="email-header">
             <h1>New Loan Application Received</h1>
-            <p>Application ID: #{{ $application->id }}</p>
+            <p>Reference ID: {{ $application['reference_id'] ?? 'N/A' }}</p>
         </div>
 
         <!-- Body -->
@@ -113,30 +113,30 @@
             </div>
 
             <p>Hello Admin,</p>
-            <p>A new loan application has been submitted on <strong>{{ $application->created_at->format('d M Y \a\t H:i') }}</strong>.</p>
+            <p>A new loan application has been submitted on <strong>{{ \Carbon\Carbon::parse($application['submitted_at'])->format('d M Y \a\t H:i') }}</strong>.</p>
 
             <!-- Applicant Information -->
             <div class="section-title">APPLICANT INFORMATION</div>
             <table class="info-table">
                 <tr>
                     <td>Full Name:</td>
-                    <td><strong>{{ $application->full_name }}</strong></td>
+                    <td><strong>{{ trim(($application['first_name'] ?? '') . ' ' . ($application['middle_name'] ?? '') . ' ' . ($application['surname'] ?? '')) }}</strong></td>
                 </tr>
                 <tr>
                     <td>National ID:</td>
-                    <td>{{ $application->national_id }}</td>
+                    <td>{{ $application['national_id'] ?? 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>Mobile Number:</td>
-                    <td>{{ $application->mobile_no }}</td>
+                    <td>{{ $application['mobile_no'] ?? 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>Email Address:</td>
-                    <td>{{ $application->email_address }}</td>
+                    <td>{{ $application['email_address'] ?? 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>Residential Address:</td>
-                    <td>{{ $application->residential_address }}</td>
+                    <td>{{ $application['residential_address'] ?? 'N/A' }}</td>
                 </tr>
             </table>
 
@@ -145,15 +145,15 @@
             <table class="info-table">
                 <tr>
                     <td>Loan Amount:</td>
-                    <td><span class="highlight">USD ${{ number_format($application->loan_amount, 2) }}</span></td>
+                    <td><span class="highlight">USD ${{ number_format($application['loan_amount'] ?? 0, 2) }}</span></td>
                 </tr>
                 <tr>
                     <td>Loan Period:</td>
-                    <td>{{ $application->loan_period_months }} months</td>
+                    <td>{{ $application['loan_period_months'] ?? 'N/A' }} months</td>
                 </tr>
                 <tr>
                     <td>Loan Purpose:</td>
-                    <td>{{ $application->loan_purpose }}</td>
+                    <td>{{ $application['loan_purpose'] ?? 'N/A' }}</td>
                 </tr>
             </table>
 
@@ -162,23 +162,23 @@
             <table class="info-table">
                 <tr>
                     <td>Occupation:</td>
-                    <td>{{ ucfirst($application->occupation) }}</td>
+                    <td>{{ ucfirst($application['occupation'] ?? 'N/A') }}</td>
                 </tr>
                 <tr>
                     <td>Employer/Business:</td>
-                    <td>{{ $application->employer_business ?: 'N/A' }}</td>
+                    <td>{{ $application['employer_business'] ?? 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>Monthly Salary:</td>
-                    <td>USD ${{ number_format($application->monthly_salary_income, 2) }}</td>
+                    <td>USD ${{ number_format($application['monthly_salary_income'] ?? 0, 2) }}</td>
                 </tr>
                 <tr>
                     <td>Other Income:</td>
-                    <td>USD ${{ number_format($application->other_income ?? 0, 2) }}</td>
+                    <td>USD ${{ number_format($application['other_income'] ?? 0, 2) }}</td>
                 </tr>
                 <tr>
                     <td>Total Monthly Income:</td>
-                    <td><strong>USD ${{ number_format($application->total_monthly_income, 2) }}</strong></td>
+                    <td><strong>USD ${{ number_format(($application['monthly_salary_income'] ?? 0) + ($application['other_income'] ?? 0), 2) }}</strong></td>
                 </tr>
             </table>
 
@@ -187,15 +187,15 @@
             <table class="info-table">
                 <tr>
                     <td>Bank Name:</td>
-                    <td>{{ $application->bank_name }}</td>
+                    <td>{{ $application['bank_name'] ?? 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>Branch:</td>
-                    <td>{{ $application->bank_branch }}</td>
+                    <td>{{ $application['bank_branch'] ?? 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>Account Number:</td>
-                    <td>{{ $application->account_number }}</td>
+                    <td>{{ $application['account_number'] ?? 'N/A' }}</td>
                 </tr>
             </table>
 
@@ -204,21 +204,29 @@
             <table class="info-table">
                 <tr>
                     <td>First Contact:</td>
-                    <td>{{ $application->kin1_name }} ({{ $application->kin1_relationship }})<br>
-                        Tel: {{ $application->kin1_contact }}</td>
+                    <td>{{ $application['kin1_name'] ?? 'N/A' }} ({{ $application['kin1_relationship'] ?? 'N/A' }})<br>
+                        Tel: {{ $application['kin1_contact'] ?? 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>Second Contact:</td>
-                    <td>{{ $application->kin2_name }} ({{ $application->kin2_relationship }})<br>
-                        Tel: {{ $application->kin2_contact }}</td>
+                    <td>{{ $application['kin2_name'] ?? 'N/A' }} ({{ $application['kin2_relationship'] ?? 'N/A' }})<br>
+                        Tel: {{ $application['kin2_contact'] ?? 'N/A' }}</td>
                 </tr>
             </table>
 
-            <p style="margin-top: 30px;">
-                <strong>Note:</strong> The complete application form is attached to this email as a PDF document for your review.
-            </p>
+            <div style="background: #e7f3ff; border: 1px solid #2196F3; padding: 15px; margin-top: 30px; border-radius: 4px;">
+                <p style="margin: 0; color: #1565C0;">
+                    <strong>📎 Attachments:</strong> This email includes the following documents:
+                </p>
+                <ul style="margin: 10px 0; padding-left: 20px; color: #1565C0;">
+                    <li>Complete Application Form (PDF)</li>
+                    <li>Applicant's Payslip (PDF)</li>
+                    <li>National ID Document (PDF)</li>
+                    <li>Bank Statement (PDF)</li>
+                </ul>
+            </div>
 
-            <p>Please review the application and contact the applicant at your earliest convenience.</p>
+            <p style="margin-top: 20px;">Please review the application and all supporting documents. Contact the applicant at your earliest convenience.</p>
         </div>
 
         <!-- Footer -->
