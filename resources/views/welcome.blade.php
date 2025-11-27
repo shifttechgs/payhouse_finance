@@ -432,145 +432,133 @@
     <!-- End How To Apply Area -->
 
 
-{{--    <!-- Start Team Area -->--}}
-{{--    <div class="team-page pt-100" id="team">--}}
-{{--        <div class="container">--}}
+    <!-- Start Team Area -->
+    <div class="team-page pt-100" id="team">
+        <div class="container">
 
-{{--            <div class="pricing-bg bg-color-edf1ee radius-30">--}}
-{{--                <div class="about-top mb-5">--}}
-{{--                    <div class="row align-items-center" data-cues="slideInUp" data-duration="800">--}}
-{{--                        <div class="col-lg-7 col-md-7">--}}
-{{--                            <div class="section-heading mb-0">--}}
-{{--                                <span class="sub-title two bg-color-9edd05 rounded-pill">OUR TEAM</span>--}}
-{{--                                <h2 class="mb-0">Meet The Amazing Team Behind Payhouse </h2>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-5 col-md-5">--}}
-{{--                            <div class="content">--}}
-{{--                                <p>By integrating advanced technology with financial expertise we provide a comprehensive suite of services that cater to both individuals and businesses.</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="row g-4 justify-content-center" data-cues="slideInUp" data-duration="800">--}}
-{{--                    <div class="col-lg-6 col-md-6 col-sm-6">--}}
-{{--                        <div class="team-card">--}}
-{{--                            <div class="team-image position-relative">--}}
-{{--                                <a href="">--}}
-{{--                                    <img class="radius-30" src="assets/images/team/team-image-3.jpg" alt="image">--}}
-{{--                                </a>--}}
-{{--                                <ul>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://facebook.com/" target="_blank">--}}
-{{--                                            <i class="ri-facebook-fill"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://twitter.com/" target="_blank">--}}
-{{--                                            <i class="ri-twitter-x-fill"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://instagram.com/" target="_blank">--}}
-{{--                                            <i class="ri-instagram-line"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://linkedin.com/" target="_blank">--}}
-{{--                                            <i class="ri-linkedin-fill"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                            <div class="team-card-body">--}}
-{{--                                <h3>--}}
-{{--                                    <a href="">Allan</a>--}}
-{{--                                </h3>--}}
-{{--                                <span>Investment Strategist</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-lg-6 col-md-6 col-sm-6">--}}
-{{--                        <div class="team-card">--}}
-{{--                            <div class="team-image position-relative">--}}
-{{--                                <a href="">--}}
-{{--                                    <img class="radius-30" src="assets/images/team/team-image-3.jpg" alt="image">--}}
-{{--                                </a>--}}
-{{--                                <ul>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://facebook.com/" target="_blank">--}}
-{{--                                            <i class="ri-facebook-fill"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://twitter.com/" target="_blank">--}}
-{{--                                            <i class="ri-twitter-x-fill"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://instagram.com/" target="_blank">--}}
-{{--                                            <i class="ri-instagram-line"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://linkedin.com/" target="_blank">--}}
-{{--                                            <i class="ri-linkedin-fill"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                            <div class="team-card-body">--}}
-{{--                                <h3>--}}
-{{--                                    <a href="">Maketo</a>--}}
-{{--                                </h3>--}}
-{{--                                <span>Investment Strategist</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-lg-4 col-md-6 col-sm-6">--}}
-{{--                        <div class="team-card">--}}
-{{--                            <div class="team-image position-relative">--}}
-{{--                                <a href="">--}}
-{{--                                    <img class="radius-30" src="assets/images/team/team-image-3.jpg" alt="image">--}}
-{{--                                </a>--}}
-{{--                                <ul>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://facebook.com/" target="_blank">--}}
-{{--                                            <i class="ri-facebook-fill"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://twitter.com/" target="_blank">--}}
-{{--                                            <i class="ri-twitter-x-fill"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://instagram.com/" target="_blank">--}}
-{{--                                            <i class="ri-instagram-line"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="https://linkedin.com/" target="_blank">--}}
-{{--                                            <i class="ri-linkedin-fill"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                            <div class="team-card-body">--}}
-{{--                                <h3>--}}
-{{--                                    <a href="">Brian S. Harman</a>--}}
-{{--                                </h3>--}}
-{{--                                <span>Lead Advisor</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+            <div class="pricing-bg bg-color-edf1ee radius-30">
+                <div class="about-top mb-5">
+                    <div class="row align-items-center" data-cues="slideInUp" data-duration="800">
+                        <div class="col-lg-7 col-md-7">
+                            <div class="section-heading mb-0">
+                                <span class="sub-title two bg-color-9edd05 rounded-pill">OUR TEAM</span>
+                                <h2 class="mb-0">Meet The Visionary Leaders Behind Payhouse</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5">
+                            <div class="content">
+                                <p>Combining decades of financial expertise, legal excellence, and industry knowledge to deliver world-class microfinance solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 justify-content-center" data-cues="slideInUp" data-duration="800">
 
-{{--                </div>--}}
-{{--            </div>--}}
+                    <!-- Team Member 1: Board Chairman -->
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="team-card-premium">
+                            <div class="team-image-wrapper position-relative">
+                                <img class="radius-30" src="assets/images/team/team-image-3.jpg" alt="Adv. Simudzirai Machingauta">
+                                <div class="team-bio-overlay">
+                                    <div class="bio-content">
+                                        <div class="bio-header">
+                                            <i class="ri-award-line bio-icon"></i>
+                                            <span class="experience-badge">15+ Years Legal Experience</span>
+                                        </div>
+                                        <div class="bio-text">
+                                            <p class="mb-2"><strong>Senior Partner</strong> at Tavenhave & Machingauta Legal Practitioners</p>
+                                            <div class="credentials mb-2">
+                                                <span class="credential-tag">LLB - University of Zimbabwe</span>
+                                                <span class="credential-tag">LLM - Midlands State University</span>
+                                            </div>
+                                            <p class="expertise-note">Legal expertise ensures company leadership is well-guided on compliance and corporate governance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-card-body-premium">
+                                <h3>Adv. Simudzirai Machingauta</h3>
+                                <span class="position-title">Board Chairman</span>
+                                <div class="hover-instruction">
+                                    <i class="ri-information-line"></i> Hover to view profile
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2: Managing Director -->
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="team-card-premium">
+                            <div class="team-image-wrapper position-relative">
+                                <img class="radius-30" src="assets/images/team/team-image-3.jpg" alt="Allan Chidawarima">
+                                <div class="team-bio-overlay">
+                                    <div class="bio-content">
+                                        <div class="bio-header">
+                                            <i class="ri-award-line bio-icon"></i>
+                                            <span class="experience-badge">20 Years Banking Experience</span>
+                                        </div>
+                                        <div class="bio-text">
+                                            <p class="mb-2"><strong>Key Skills:</strong> Business Development, Financial & Credit Risk Management, Relationship Management</p>
+                                            <div class="credentials mb-2">
+                                                <span class="credential-tag">BBS Hons - University of Zimbabwe</span>
+                                                <span class="credential-tag">MSc Banking & Financial Services - NUST</span>
+                                                <span class="credential-tag">ICM Diploma</span>
+                                                <span class="credential-tag">Institute of Bankers Zimbabwe</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-card-body-premium">
+                                <h3>Allan Chidawarima</h3>
+                                <span class="position-title">Managing Director</span>
+                                <div class="hover-instruction">
+                                    <i class="ri-information-line"></i> Hover to view profile
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3: Chief Operating Officer -->
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="team-card-premium">
+                            <div class="team-image-wrapper position-relative">
+                                <img class="radius-30" src="assets/images/team/team-image-3.jpg" alt="Maketo Ncube">
+                                <div class="team-bio-overlay">
+                                    <div class="bio-content">
+                                        <div class="bio-header">
+                                            <i class="ri-award-line bio-icon"></i>
+                                            <span class="experience-badge">10 Years Microfinance Experience</span>
+                                        </div>
+                                        <div class="bio-text">
+                                            <p class="mb-2"><strong>Key Skills:</strong> Sales & Marketing, Credit Assessment, Branch Operations, Accounting & Financial Management</p>
+                                            <div class="credentials mb-2">
+                                                <span class="credential-tag">BBS Hons - University of Zimbabwe</span>
+                                                <span class="credential-tag">MBA - University of Zimbabwe</span>
+                                                <span class="credential-tag">Microfinance Certificate - Frankfurt School</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-card-body-premium">
+                                <h3>Maketo Ncube</h3>
+                                <span class="position-title">Chief Operating Officer</span>
+                                <div class="hover-instruction">
+                                    <i class="ri-information-line"></i> Hover to view profile
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
 
-{{--        </div>--}}
-{{--    </div>--}}
+        </div>
+    </div>
+
+
 {{--    <!-- End Our Team Area -->--}}
 
 
